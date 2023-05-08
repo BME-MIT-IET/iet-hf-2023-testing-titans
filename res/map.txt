@@ -1,0 +1,120 @@
+create field free Szabad1
+create field free Szabad2
+create field free Szabad3
+create field free Szabad4
+create field free Szabad5
+create field free Szabad6
+create field free Szabad7
+create field free Szabad8
+create field free Szabad9
+create field free Szabad10
+create field free Szabad11
+create field free Szabad12
+create field free Szabad13
+create field free Szabad14
+create field free Szabad15
+create field free Szabad16
+create field free Szabad17
+create field free Szabad18
+create field free Szabad19
+create field free Szabad20
+create field stor Raktár1
+create field stor Raktár2
+create field stor Raktár3
+create field stor Raktár4
+create field stor Raktár5
+create field stor Raktár6
+create field stor Raktár7
+create field shel Óvóhely1
+create field shel Óvóhely2
+create field shel Óvóhely3
+create field shel Óvóhely4
+create field shel Óvóhely5
+create field shel Óvóhely6
+create field shel Óvóhely7
+create field shel Óvóhely8
+create field labo Labor1
+create field labo Labor2
+create field infe Labor3
+create field labo Labor4
+create field labo Labor5
+connect Raktár1 Szabad1
+connect Raktár1 Labor1
+connect Raktár1 Óvóhely1
+connect Szabad1 Óvóhely2
+connect Szabad1 Szabad5
+connect Óvóhely2 Szabad6
+connect Óvóhely1 Szabad4
+connect Labor1 Szabad4
+connect Szabad5 Óvóhely4
+connect Óvóhely4 Szabad6
+connect Óvóhely1 Szabad3
+connect Szabad3 Szabad2
+connect Szabad3 Raktár3
+connect Szabad4 Raktár3
+connect Raktár3 Óvóhely4
+connect Óvóhely4 Szabad9
+connect Szabad10 Szabad6
+connect Szabad2 Raktár2
+connect Raktár2 Szabad8
+connect Szabad3 Szabad8
+connect Szabad3 Labor3
+connect Labor3 Raktár3
+connect Raktár3 Szabad13
+connect Szabad13 Szabad9
+connect Szabad9 Szabad10
+connect Szabad10 Szabad7
+connect Szabad10 Labor4
+connect Raktár2 Szabad7
+connect Raktár2 Óvóhely3
+connect Szabad8 Labor3
+connect Szabad8 Labor2
+connect Szabad12 Labor3
+connect Labor3 Szabad13
+connect Szabad9 Labor4
+connect Labor4 Raktár7
+connect Szabad7 Óvóhely5
+connect Szabad7 Óvóhely3
+connect Óvóhely3 Szabad11
+connect Szabad11 Labor2
+connect Labor2 Szabad12
+connect Szabad12 Szabad13
+connect Szabad13 Raktár6
+connect Raktár6 Szabad20
+connect Szabad20 Labor4
+connect Óvóhely5 Szabad11
+connect Óvóhely6 Szabad11
+connect Szabad11 Raktár5
+connect Raktár5 Szabad12
+connect Szabad12 Labor5
+connect Labor5 Raktár6
+connect Raktár6 Óvóhely7
+connect Óvóhely7 Szabad20
+connect Szabad20 Óvóhely8
+connect Óvóhely5 Szabad14
+connect Szabad14 Óvóhely6
+connect Óvóhely6 Raktár4
+connect Raktár4 Szabad15
+connect Szabad15 Raktár5
+connect Raktár5 Szabad16
+connect Szabad15 Szabad16
+connect Szabad16 Szabad17
+connect Szabad17 Labor5
+connect Labor5 Szabad18
+connect Szabad18 Óvóhely7
+connect Óvóhely7 Szabad19
+connect Szabad18 Szabad19
+connect Szabad19 Óvóhely8
+add gene forg Labor1
+add gene prot Labor2
+add gene chor Labor3
+add gene chor Labor4
+add gene numb Labor5
+add equi bag Óvóhely1 b1
+add equi prot Óvóhely2 p1
+add equi bag Óvóhely3 b2
+add equi axe Óvóhely4 a1
+add equi glov Óvóhely5 g1
+add equi axe Óvóhely6 a2
+add equi bag Óvóhely7 b3
+add equi glov Óvóhely8 g2
