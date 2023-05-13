@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /**
  * A játéktéren található óvóhely mezőket megvalósító osztály. Ezeken a mezőkön

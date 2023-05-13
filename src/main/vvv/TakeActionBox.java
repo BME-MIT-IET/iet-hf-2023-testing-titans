@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 import java.awt.Color;
 import java.awt.GridBagConstraints;
@@ -81,15 +81,15 @@ public class TakeActionBox extends ModalBox {
 		funcs.add(stealFunc);
 		parent.setEnabled(true);
 		moveButton = new JButton();
-		setButton(moveButton, "./res/pics/move_64.png");
+		setButton(moveButton, "./pics/move_64.png");
 		craftButton = new JButton();
-		setButton(craftButton, "./res/pics/craft_64.png");
+		setButton(craftButton, "./pics/craft_64.png");
 		applyButton = new JButton();
-		setButton(applyButton, "./res/pics/apply_64.png");
+		setButton(applyButton, "./pics/apply_64.png");
 		hitButton = new JButton();
-		setButton(hitButton, "./res/pics/hit_64.png");
+		setButton(hitButton, "./pics/hit_64.png");
 		stealButton = new JButton();
-		setButton(stealButton, "./res/pics/steal_64.png");
+		setButton(stealButton, "./pics/steal_64.png");
 
 		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();

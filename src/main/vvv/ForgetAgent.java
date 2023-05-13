@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /** A feladata, hogy létrehozza a genetikai kódokat elfelejtő vírus hatását. */
 public class ForgetAgent extends Agent {

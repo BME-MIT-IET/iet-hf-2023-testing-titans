@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /**
  * Felelőssége, hogy hatása lejártáig lebénított állapotban tartsa azt a

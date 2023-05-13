@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /**
  * A vitustánc vírushoz tartozó ágenst készíti el, amelyet hozzáad a virológus

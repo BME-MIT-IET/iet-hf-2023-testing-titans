@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /**
  * A kesztyű tulajdonosát ágenssel megtámadó virológusra visszafejti az ágens

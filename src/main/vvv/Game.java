@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

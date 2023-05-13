@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /**
  * Eseménykezelő üres függvényeket tartalmaz, amelyeket az implementáló osztály

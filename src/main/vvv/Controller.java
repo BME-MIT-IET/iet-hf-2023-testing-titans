@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /** Az MVC architektúra Controllerért valósítja meg. */
 public class Controller {

@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /**
  * Olyan ősosztály, melynek leszármazott osztályai reagálhatnak a virológussal

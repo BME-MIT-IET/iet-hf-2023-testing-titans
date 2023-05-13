@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /**
  * Menedzseli és tárolja a virológus által birtokolt aminosav mennyiségét.

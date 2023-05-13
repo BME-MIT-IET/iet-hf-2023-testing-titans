@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;

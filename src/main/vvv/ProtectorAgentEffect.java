@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /** Ez az osztály a védelmező ágens hatását reprezentálja. */
 public class ProtectorAgentEffect extends AgentEffect {

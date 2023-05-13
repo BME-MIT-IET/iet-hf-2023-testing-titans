@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /**
  * Olyan interfész, amit azok az osztályok valósítanak meg, amiknek a példányaik
