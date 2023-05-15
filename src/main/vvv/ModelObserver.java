@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 public interface ModelObserver {
 	/**

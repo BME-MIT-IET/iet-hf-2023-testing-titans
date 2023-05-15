@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /**
  * Olyan osztályoknak a függvényeit írja elő, melyek kepések arra, hogy

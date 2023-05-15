@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /** A szabad mezőket megvalósító osztály, főként ezek alkotják a játékteret. */
 public class FreeField extends Field {

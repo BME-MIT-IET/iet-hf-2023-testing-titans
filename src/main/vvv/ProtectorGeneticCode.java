@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /**
  * Azt a genetikai kódot reprezentálja, amiből védelmező ágenst lehet

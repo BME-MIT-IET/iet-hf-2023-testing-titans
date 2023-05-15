@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /**
  * A genetikai kódokat elfelejtő vírushoz tartozó ágenst készíti el, amelyet

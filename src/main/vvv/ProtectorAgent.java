@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /** A védelmező ágenst reprezentálja. */
 public class ProtectorAgent extends Agent {

@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ public class MapManager {
 	 * virológusokat (players) is a játéktérre.
 	 */
 	public void generate() {
-		fields = new MapLoader("./res/map.txt").getFields();
+		fields = new MapLoader("./map.txt").getFields();
 	}
 
 	/** Visszaadja a játékban lévő mezők listáját. */

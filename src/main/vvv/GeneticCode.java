@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /**
  * A játéktéren a laboratórium mezőkön megtalálható genetikai kódokat

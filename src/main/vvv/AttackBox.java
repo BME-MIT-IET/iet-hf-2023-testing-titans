@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 import java.awt.event.ActionEvent;
 import java.util.function.Consumer;

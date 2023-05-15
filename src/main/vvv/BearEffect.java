@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /**
  * Felelőssége, hogy amíg a virológust nem ütik meg baltával, véletlenszerű

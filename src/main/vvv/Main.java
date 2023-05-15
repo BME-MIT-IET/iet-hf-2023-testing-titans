@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /** A program indításáért felelős osztály. */
 public class Main {

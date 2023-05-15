@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /**
  * A laboratórium mezőket megvalósító osztály. Ezeken a mezőkön találhatják meg

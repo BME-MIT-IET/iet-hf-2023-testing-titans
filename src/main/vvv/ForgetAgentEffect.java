@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /**
  * Felelőssége, hogy hatására elfelejtse az összes megismert genetikai kódot

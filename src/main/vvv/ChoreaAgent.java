@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /**
  * A feladata, hogy létrehozza a vitustánc vírus hatását.

@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /**
  * Ez egy absztrakt osztály, amely az anyagtárolókat reprezentálja. Menedzseli

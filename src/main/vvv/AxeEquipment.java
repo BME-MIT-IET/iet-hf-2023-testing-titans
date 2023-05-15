@@ -1,4 +1,4 @@
-package src.main.vvv;
+package vvv;
 
 /**
  * A balta felszerelést reprezentálja. Ezzel az eszközzel lehet megtámadni egy
