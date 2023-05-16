@@ -173,7 +173,7 @@ public abstract class Slot {
 	 *         null.
 	 */
 	public List<GeneticCode> getGeneticCodes() {
-		return null;
+		return Collections.emptyList();
 	}
 
 	/**
