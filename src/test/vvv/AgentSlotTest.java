@@ -1,10 +1,11 @@
+package vvv;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import vvv.AgentSlot;
-import vvv.ChoreaAgent;
 
 class AgentSlotTest {
     final int SLOT_SIZE = 3;
@@ -31,7 +32,7 @@ class AgentSlotTest {
         addManyAgents(SLOT_SIZE);
 
         // Act
-        agentSlot.addAgent(new ChoreaAgent());
+        addOneAgentToSlot();
 
         // Assert
         assertEquals(SLOT_SIZE, agentSlot.getValue());
@@ -40,7 +41,7 @@ class AgentSlotTest {
     @Test
     void fill_FromAgentSlot_Succeed() {
         // Arrange
-        AgentSlot slot = getAgentSlotWithAgents(1);
+        Slot slot = getAgentSlotWithAgents(1);
 
         // Act
         agentSlot.fill(slot);
@@ -54,7 +55,7 @@ class AgentSlotTest {
     void fill_FromAgentSlot_Fail() {
         // Arrange
         addManyAgents(SLOT_SIZE);
-        AgentSlot slot = getAgentSlotWithAgents(1);
+        Slot slot = getAgentSlotWithAgents(1);
 
         // Act
         agentSlot.fill(slot);
@@ -64,8 +65,30 @@ class AgentSlotTest {
         assertEquals(1, slot.getValue());
     }
 
+    @Test
+    void fill_FromNonAgentSlot_Fail() {
+        // Arrange
+        EquipmentSlot slot = mock(EquipmentSlot.class);
+        slot.addEquipment(mock(Equipment.class));
+
+        // Act
+        agentSlot.fill(slot);
+
+        // Assert
+        assertTrue(agentSlot.getAgents().isEmpty());
+    }
+
+    @Test
+    void handleRemoveAgent_NoAgent_NoError() {
+        // Act
+        agentSlot.handleRemoveAgent(mock(Agent.class));
+
+        // Assert
+        assertTrue(agentSlot.getAgents().isEmpty());
+    }
+
     void addOneAgentToSlot() {
-        agentSlot.addAgent(new ChoreaAgent());
+        agentSlot.addAgent(mock(Agent.class));
     }
 
     void addManyAgents(int agentCount) {
@@ -77,7 +100,7 @@ class AgentSlotTest {
     AgentSlot getAgentSlotWithAgents(int agentCount) {
         AgentSlot slot = new AgentSlot();
         for (int i = 0; i < agentCount; i++) {
-            slot.addAgent(new ChoreaAgent());
+            slot.addAgent(mock(Agent.class));
         }
         return slot;
     }
