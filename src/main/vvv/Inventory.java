@@ -58,7 +58,6 @@ public class Inventory {
 	/**
 	 * A paraméterként megkapott Inventory példányból mindent megpróbál átmozgatni a
 	 * jelenlegi Inventory példányba.
-	 * 
 	 * @param fromInv Ahonnan átmozgatja a tárolók tartalmát.
 	 */
 	public void fillFrom(Inventory fromInv) {
