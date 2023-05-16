@@ -19,7 +19,7 @@ public class Player {
 	 * A virológus ebben az objektumban tárolja a nála lévő anyagokat, eszközöket,
 	 * ágenseket, illetve a megismert genetikai kódokat.
 	 */
-	private Inventory inventory = null;
+	private Inventory inventory;
 
 	/** Jelenleg ezen a mezőn áll a virológus. */
 	private Field currentField = null;

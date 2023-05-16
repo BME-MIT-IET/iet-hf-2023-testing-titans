@@ -6,7 +6,7 @@ package vvv;
  */
 public class LaboratoryField extends Field {
 	/** A laborban található genetika kód tárolója. */
-	private Inventory inventory = new Inventory();
+	private final Inventory inventory = new Inventory();
 
 	/**
 	 * Meghívja őse konstruktorát és hozzáad a mezőhöz egy olyan tárolót, ami
