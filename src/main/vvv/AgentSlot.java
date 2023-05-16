@@ -53,6 +53,9 @@ public class AgentSlot extends Slot {
 	 * @param a A hozzáadandó ágens.
 	 */
 	public void addAgent(Agent a) {
+		if (agents.size() == maxValue) {
+			return;
+		}
 		agents.add(a);
 	}
 
