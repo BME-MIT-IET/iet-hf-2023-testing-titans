@@ -10,6 +10,7 @@ public class ProtectorAgentEffect extends AgentEffect {
 	}
 
 	/** Mindig igazzal tér vissza, így kivédi a felkenést. */
+	@Override
 	public boolean handleAnointedBy(Player player, Agent agent) {
 		return true;
 	}

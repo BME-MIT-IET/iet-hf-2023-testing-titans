@@ -8,7 +8,7 @@ package vvv;
  */
 public class ForgetGeneticCode extends GeneticCode {
 	/** Az osztály egyetlen példányát tárolja. */
-	private static ForgetGeneticCode forgetGeneticCodeInstance = new ForgetGeneticCode();
+	private static final ForgetGeneticCode forgetGeneticCodeInstance = new ForgetGeneticCode();
 
 	/** Meghívja őse konstruktorát 4, 4 paraméterekkel. */
 	private ForgetGeneticCode() {

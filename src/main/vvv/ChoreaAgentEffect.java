@@ -16,6 +16,7 @@ public class ChoreaAgentEffect extends AgentEffect {
 	 * Alapértelmezetten ez egy üres lista.
 	 */
 	private List<Field> fields = new ArrayList<>();
+	private static Random random = new Random();
 
 	/** Feliratkozik a RoundTimeout-ra 3 körig. */
 	public ChoreaAgentEffect() {
@@ -27,14 +28,15 @@ public class ChoreaAgentEffect extends AgentEffect {
 	 * Igaz értékkel tér vissza és közben egy véletlenszerű mezőre lépteti a
 	 * virológust.
 	 */
+	@Override
 	public boolean handleTakeAction() {
-		if (fields.size() != 0) {
+		if (!fields.isEmpty()) {
 			player.move(fields.get(0));
 			fields.remove(0);
 		} else {
 			Field field = player.getCurrentField();
 			List<Field> neighborFields = field.getNeighbors();
-			int index = new Random().nextInt(neighborFields.size());
+			int index = random.nextInt(neighborFields.size());
 			Field nextField = neighborFields.get(index);
 			player.move(nextField);
 		}

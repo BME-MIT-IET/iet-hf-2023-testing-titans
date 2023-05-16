@@ -12,7 +12,7 @@ public abstract class ModalBox extends JFrame implements ActionListener, ModelOb
 	/**
 	 * A szűlő ablak referenciája.
 	 */
-	protected JFrame parent;
+	protected JFrame parentFrame;
 	/**
 	 * A játék példány.
 	 */
@@ -23,8 +23,8 @@ public abstract class ModalBox extends JFrame implements ActionListener, ModelOb
 	 * 
 	 * @param parent A szülő ablak referenciája.
 	 */
-	public ModalBox(JFrame parent) {
-		this.parent = parent;
+	protected ModalBox(JFrame parent) {
+		this.parentFrame = parent;
 		parent.setEnabled(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
@@ -35,7 +35,7 @@ public abstract class ModalBox extends JFrame implements ActionListener, ModelOb
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		parent.setEnabled(true);
+		parentFrame.setEnabled(true);
 		this.setVisible(false);
 	}
 

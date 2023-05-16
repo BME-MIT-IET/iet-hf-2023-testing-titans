@@ -26,6 +26,7 @@ public class StorageField extends Field implements Timeout {
 	 * Amikor a virológus rálép a mezőre, akkor ezen keresztül tudja meg a mező,
 	 * hogy kinek kell odaadnia a tárolt anyagokat.
 	 */
+	@Override
 	public void collect(Player player) {
 		player.destroyMe(this);
 		player.give(inventory);

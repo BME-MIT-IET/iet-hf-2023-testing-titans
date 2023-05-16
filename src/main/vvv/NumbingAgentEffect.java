@@ -13,6 +13,7 @@ public class NumbingAgentEffect extends AgentEffect {
 	}
 
 	/** Hamissal tér vissza, ilyenkor lehet lopni a virológustól. */
+	@Override
 	public boolean handleStealing() {
 		return false;
 	}
@@ -20,6 +21,7 @@ public class NumbingAgentEffect extends AgentEffect {
 	/**
 	 * Igazzal tér vissza, ilyenkor nem engedi cselekedni a virológust.
 	 */
+	@Override
 	public boolean handleTakeAction() {
 		return true;
 	}
