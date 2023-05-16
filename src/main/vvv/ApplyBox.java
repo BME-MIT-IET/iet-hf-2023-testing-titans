@@ -14,7 +14,7 @@ public class ApplyBox extends ActionBox {
 	/**
 	 * Az ágenst felhasználó callback függvény.
 	 */
-	private BiConsumer<Agent, Player> func;
+	private final BiConsumer<Agent, Player> func;
 	/**
 	 * A megtámadható virológusok listája.
 	 */

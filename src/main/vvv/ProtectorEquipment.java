@@ -15,15 +15,16 @@ public class ProtectorEquipment extends Equipment {
 	 */
 	private boolean canProtect = true;
 
+	private static Random random = new Random();
 	/**
 	 * Megkapja paraméterként, hogy melyik virológus kent rá mit, majd megpróbálja
 	 * kivédeni a felkenést.
 	 */
+	@Override
 	public boolean handleAnointedBy(Player player, Agent agent) {
 		if (!isDeterm) {
-			float randomValue = new Random().nextFloat();
-			boolean retValue = randomValue < 0.823 ? true : false;
-			return retValue;
+			float randomValue = random.nextFloat();
+			return randomValue < 0.823;
 		} else {
 			return canProtect;
 		}
@@ -40,9 +41,8 @@ public class ProtectorEquipment extends Equipment {
 	@Override
 	public boolean handleInfection() {
 		if (!isDeterm) {
-			float randomValue = new Random().nextFloat();
-			boolean retValue = randomValue < 0.823 ? true : false;
-			return retValue;
+			float randomValue = random.nextFloat();
+			return randomValue < 0.823;
 		} else {
 			return canProtect;
 		}

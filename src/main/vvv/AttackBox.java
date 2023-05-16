@@ -15,7 +15,7 @@ public class AttackBox extends ActionBox {
 	/**
 	 * A támadás callback függvénye.
 	 */
-	private Consumer<Player> func;
+	private final Consumer<Player> func;
 	/**
 	 * A megtámadható virológusok listája.
 	 */

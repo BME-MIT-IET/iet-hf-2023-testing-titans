@@ -28,6 +28,7 @@ public class AminoAcidSlot extends MaterialSlot {
 	 * és a
 	 * saját magából pedig eltávolítja azokat.
 	 */
+	@Override
 	public void fillIt(AminoAcidSlot ams) {
 		int amsDiff = ams.maxValue - ams.value;
 		ams.value = Math.min(ams.value + value, ams.maxValue);
@@ -39,6 +40,7 @@ public class AminoAcidSlot extends MaterialSlot {
 	 * 
 	 * @return A tárolóban lévő aminosav mennyiség.
 	 */
+	@Override
 	public int getAminoAcidCount() {
 		return value;
 	}
@@ -48,6 +50,7 @@ public class AminoAcidSlot extends MaterialSlot {
 	 * 
 	 * @return A tárolóban tárolható maximális aminosav mennyiség.
 	 */
+	@Override
 	public int getMaxAminoAcidCount() {
 		return maxValue;
 	}

@@ -1,6 +1,7 @@
 package vvv;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -13,7 +14,7 @@ public class Inventory {
 	 * A készletében lévő tárolók összesége, amelyekben különböző anyagokat, illetve
 	 * felszereléseket tárol.
 	 */
-	private List<Slot> slots = new ArrayList<Slot>();
+	private final List<Slot> slots = new ArrayList<>();
 
 	/**
 	 * Hozzáadja az adott tárolót a virológus készletéhez.
@@ -40,9 +41,8 @@ public class Inventory {
 	 * @param s A tárolóiba beletöltendő tároló.
 	 */
 	public void fillAll(Slot s) {
-		int slotSize = slots.size();
-		for (int i = 0; i < slotSize; i++) {
-			slots.get(i).fill(s);
+		for (Slot slot : slots) {
+			slot.fill(s);
 		}
 	}
 
@@ -58,12 +58,11 @@ public class Inventory {
 	/**
 	 * A paraméterként megkapott Inventory példányból mindent megpróbál átmozgatni a
 	 * jelenlegi Inventory példányba.
-	 * 
 	 * @param fromInv Ahonnan átmozgatja a tárolók tartalmát.
 	 */
 	public void fillFrom(Inventory fromInv) {
+		int slotSize = slots.size();
 		for (Slot ss : fromInv.slots) {
-			int slotSize = slots.size();
 			for (int i = 0; i < slotSize; i++) {
 				slots.get(i).fill(ss);
 			}
@@ -122,8 +121,8 @@ public class Inventory {
 	 */
 	public EquipmentSlot takeOutEquipment(int n) {
 		EquipmentSlot es2 = new EquipmentSlot();
-		for (int i = 0; i < slots.size(); i++) {
-			Equipment e = slots.get(i).removeEquipment(n);
+		for (Slot slot : slots) {
+			Equipment e = slot.removeEquipment(n);
 			if (e != null) {
 				es2.addEquipment(e);
 				break;
@@ -138,8 +137,8 @@ public class Inventory {
 	 * @param e A törlendő felszerelés referenciája.
 	 */
 	public void removeEquipment(Equipment e) {
-		for (int i = 0; i < slots.size(); i++) {
-			slots.get(i).removeEquipment(e);
+		for (Slot slot : slots) {
+			slot.removeEquipment(e);
 		}
 	}
 
@@ -197,7 +196,7 @@ public class Inventory {
 			if (g != null)
 				return g;
 		}
-		return null;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -225,7 +224,7 @@ public class Inventory {
 			if (e != null)
 				return e;
 		}
-		return null;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -266,7 +265,7 @@ public class Inventory {
 			if (a != null)
 				return a;
 		}
-		return null;
+		return Collections.emptyList();
 	}
 
 	/**

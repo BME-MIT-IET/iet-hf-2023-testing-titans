@@ -6,7 +6,7 @@ package vvv;
  * hozzá szükséges anyagok mind a rendelkezésére állnak.
  */
 public class ChoreaGeneticCode extends GeneticCode {
-	private static ChoreaGeneticCode choreaGeneticCodeInstance = new ChoreaGeneticCode();
+	private static final ChoreaGeneticCode choreaGeneticCodeInstance = new ChoreaGeneticCode();
 
 	/** Meghívja őse konstruktorát 2, 2 paraméterekkel. */
 	private ChoreaGeneticCode() {

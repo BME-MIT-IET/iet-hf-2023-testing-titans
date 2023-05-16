@@ -9,12 +9,12 @@ import java.util.Map;
  * Ez az osztály azokat az objektumokat menedzseli, amik megvalósítják a Timeout
  * interfészt, tehát azokat, amiknek véges az élettartama.
  */
-public class RoundTimeout extends GameObserver {
+public class RoundTimeout implements GameObserver {
 	/** Az objektumokat rendeli össze az élettartamukkal. */
 	private Map<Timeout, Integer> timeouts = new HashMap<>();
 
 	/** Az osztály egyetlen példányát tárolja. */
-	private static RoundTimeout roundTimeoutInstance = new RoundTimeout();
+	private static final RoundTimeout roundTimeoutInstance = new RoundTimeout();
 
 	/** Meghívja őse konstruktorát. */
 	private RoundTimeout() {

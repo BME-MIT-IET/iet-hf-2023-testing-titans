@@ -8,9 +8,7 @@ import java.util.List;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 /**
  * Az 5 cselekvés kiválasztását megjelenítő osztály.
@@ -54,8 +52,8 @@ public class TakeActionBox extends ModalBox {
 		ImageIcon img = new ImageIcon(pic);
 		btn.setIcon(img);
 		btn.setBackground(new Color(169, 209, 142));
-		btn.setHorizontalTextPosition(JButton.CENTER);
-		btn.setVerticalTextPosition(JButton.CENTER);
+		btn.setHorizontalTextPosition(SwingConstants.CENTER);
+		btn.setVerticalTextPosition(SwingConstants.CENTER);
 		btn.setMargin(new Insets(0, 0, 0, 0));
 		btn.addActionListener(this);
 	}
@@ -147,7 +145,7 @@ public class TakeActionBox extends ModalBox {
 	 * virológus milyen cselekvéseket hajthat egyáltalán végre.
 	 */
 	private void setButtonsState() {
-		MainFrame frame = (MainFrame) parent;
+		MainFrame frame = (MainFrame) parentFrame;
 		Player reference = frame.getActualGame().getCurrentPlayer();
 		moveButton.setEnabled(true);
 		craftButton.setEnabled(true);
@@ -165,10 +163,10 @@ public class TakeActionBox extends ModalBox {
 			hitButton.setEnabled(false);
 			stealButton.setEnabled(false);
 		}
-		if (reference.getGeneticCodes().size() == 0) {
+		if (reference.getGeneticCodes().isEmpty()) {
 			craftButton.setEnabled(false);
 		}
-		if (reference.getAgents().size() == 0) {
+		if (reference.getAgents().isEmpty()) {
 			applyButton.setEnabled(false);
 		}
 
@@ -181,10 +179,10 @@ public class TakeActionBox extends ModalBox {
 	@Override
 	public void onTakeAction() {
 		this.setButtonsState();
-		this.setLocationRelativeTo(parent);
-		this.setLocation(parent.getX(), parent.getY() + parent.getHeight() - 200);
+		this.setLocationRelativeTo(parentFrame);
+		this.setLocation(parentFrame.getX(), parentFrame.getY() + parentFrame.getHeight() - 200);
 		setVisible(true);
-		parent.setEnabled(false);
+		parentFrame.setEnabled(false);
 	}
 
 }

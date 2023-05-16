@@ -12,13 +12,14 @@ public class InfectiousLaboratoryField extends LaboratoryField {
 	/**
 	 * A virológus és bejárandó útvonalak gyűjteménye.
 	 */
-	Map<Player, List<Field>> sets = new HashMap<Player, List<Field>>();
+	Map<Player, List<Field>> sets = new HashMap<>();
 
 	/**
 	 * Megismerteti a laboratórium mezőn lévő genetikai kóddal a virológust,
 	 * valamint megpróbálja megfertőzni medvevírussal.
 	 * 
 	 */
+	@Override
 	public void collect(Player player) {
 		super.collect(player);
 		if (sets.keySet().contains(player)) {
@@ -38,6 +39,7 @@ public class InfectiousLaboratoryField extends LaboratoryField {
 	 * @param p      A mezőre lépő referenciája.
 	 * @param fields A mezők listája, amit be kell mindenképp járnia.
 	 */
+	@Override
 	public void setInfection(Player p, List<Field> fields) {
 		sets.put(p, fields);
 	}

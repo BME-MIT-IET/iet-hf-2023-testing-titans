@@ -11,15 +11,10 @@ import java.util.Scanner;
 
 public class MapLoader {
 	/**
-	 * A parancsok soronkénti beolvasásához szükséges objektum.
-	 */
-	private Scanner scan = new Scanner(System.in);
-
-	/**
 	 * Egy adott játékmenethez tartozó konfigurációban megjelenő mező objektumok és
 	 * a hozzájuk tartozó szöveges azonosító.
 	 */
-	private Map<Field, String> fields = new HashMap<Field, String>();
+	private final Map<Field, String> fields = new HashMap<>();
 
 	/**
 	 * Visszaadja a létrehozott mezőket
@@ -32,7 +27,7 @@ public class MapLoader {
 	 * A játékban a bemeneti nyelvben meghatározott azonosítóhoz tartozó genetikai
 	 * kód referenciák vannak benne, a gyorsabb eléréshez.
 	 */
-	private Map<String, GeneticCode> geneticCodes = new HashMap<String, GeneticCode>();
+	private static final Map<String, GeneticCode> geneticCodes = new HashMap<>();
 	{
 		geneticCodes.put("prot", ProtectorGeneticCode.getInstance());
 		geneticCodes.put("numb", NumbingGeneticCode.getInstance());
@@ -73,7 +68,7 @@ public class MapLoader {
 			connect(elements[1], elements[2]);
 		} else if (elements.length == 5 && elements[0].equals("add") && elements[1].equals("equi")) {
 			Field f = findField(elements[3]);
-			addEquiField(f, elements[2], elements[4]);
+			addEquiField(f, elements[2]);
 		} else if (elements.length == 4 && elements[0].equals("add") && elements[1].equals("gene")) {
 			Field f = findField(elements[3]);
 			addGeneField(f, elements[2]);
@@ -125,10 +120,9 @@ public class MapLoader {
 	 * Létrehoz egy felszerelést az adott azonosítóval és típusból.
 	 * 
 	 * @param type   A felszerelés típusa.
-	 * @param equiID A felszerelés azonosítója.
 	 * @return A létrehozott felszerelés referenciája.
 	 */
-	private Equipment genEquiWithID(String type, String equiID) {
+	private Equipment genEquiWithID(String type) {
 		if (type.equals("glov")) {
 			return new WearGloveEquipment();
 		} else if (type.equals("prot")) {
@@ -146,10 +140,9 @@ public class MapLoader {
 	 * 
 	 * @param f      A mező referenciája.
 	 * @param type   A felszerelés típusa.
-	 * @param equiID A felszerelés azonosítója.
 	 */
-	private void addEquiField(Field f, String type, String equiID) {
-		Equipment e = genEquiWithID(type, equiID);
+	private void addEquiField(Field f, String type) {
+		Equipment e = genEquiWithID(type);
 		if (e != null) {
 			f.setEquipment(e);
 		}
@@ -175,16 +168,14 @@ public class MapLoader {
 	 * @param fileName A konfigurációs fájl neve.
 	 */
 	public MapLoader(String fileName) {
-		try {
-			FileReader fs = new FileReader(new File(fileName), StandardCharsets.UTF_8);
-			scan = new Scanner(fs);
+		try(FileReader fs = new FileReader(new File(fileName), StandardCharsets.UTF_8);
+			Scanner scan = new Scanner(fs)) {
 			while (scan.hasNext()) {
 				String line = scan.nextLine();
 				interpretCommand(line);
 			}
-		} catch (Exception e) {
-		} finally {
-			scan.close();
+		} catch(Exception e){
+			System.out.println("Can not open the file.");
 		}
 	}
 }

@@ -11,7 +11,7 @@ public class GeneticCodeSlot extends Slot {
 	 * Ebben az objektumban tárolja el a virológus által megismert genetikai
 	 * kódokat.
 	 */
-	private List<GeneticCode> geneticCodes = new ArrayList<GeneticCode>();
+	private List<GeneticCode> geneticCodes = new ArrayList<>();
 
 	/**
 	 * Létrehozza a tárolót, és beállítja a kapacitását 4-re.
@@ -24,8 +24,7 @@ public class GeneticCodeSlot extends Slot {
 	 * Megadja a megismert genetikai kódok számát.
 	 */
 	public int getValue() {
-		int size = geneticCodes.size();
-		return size;
+		return geneticCodes.size();
 	}
 
 	/**
@@ -40,6 +39,7 @@ public class GeneticCodeSlot extends Slot {
 	 * A paraméterül kapott genetikai kód tárolót megtölti a saját magában lévő
 	 * genetikai kódokkal.
 	 */
+	@Override
 	public void fillIt(GeneticCodeSlot gs) {
 		for (GeneticCode g : geneticCodes) {
 			if (!gs.geneticCodes.contains(g)) {
@@ -52,6 +52,7 @@ public class GeneticCodeSlot extends Slot {
 	 * Lekezeli a megismert genetikai kódok törlését és törli azok referenciáját a
 	 * tárolóból.
 	 */
+	@Override
 	public void handleClearMemory() {
 		geneticCodes.clear();
 	}
@@ -79,8 +80,9 @@ public class GeneticCodeSlot extends Slot {
 	 * 
 	 * @return Az első genetikai kód referenciája.
 	 */
+	@Override
 	public GeneticCode getGeneticCode() {
-		if (geneticCodes.size() == 0)
+		if (geneticCodes.isEmpty())
 			return null;
 		return geneticCodes.get(0);
 	}
@@ -90,6 +92,7 @@ public class GeneticCodeSlot extends Slot {
 	 * 
 	 * @return A genetikai kódok listájának referenciája.
 	 */
+	@Override
 	public List<GeneticCode> getGeneticCodes() {
 		return geneticCodes;
 	}

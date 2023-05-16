@@ -29,7 +29,7 @@ public abstract class ActionBox extends ModalBox {
 	 * @param parent A szülő panel referenciája.
 	 * @param title  Az akció ablak neve.
 	 */
-	public ActionBox(JFrame parent, String title) {
+	protected ActionBox(JFrame parent, String title) {
 		super(parent);
 		chooseButton.setText("Kiválaszt");
 

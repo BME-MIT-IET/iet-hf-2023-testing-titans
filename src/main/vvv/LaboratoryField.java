@@ -6,7 +6,7 @@ package vvv;
  */
 public class LaboratoryField extends Field {
 	/** A laborban található genetika kód tárolója. */
-	private Inventory inventory = new Inventory();
+	private final Inventory inventory = new Inventory();
 
 	/**
 	 * Meghívja őse konstruktorát és hozzáad a mezőhöz egy olyan tárolót, ami
@@ -18,11 +18,13 @@ public class LaboratoryField extends Field {
 	}
 
 	/** Megismerteti az adott virológussal az ott található genetikai kódot. */
+	@Override
 	public void collect(Player player) {
 		player.give(inventory);
 	}
 
 	/** Beállítja az itt található genetikai kódot a paraméterben kapottra */
+	@Override
 	public void setGeneticCode(GeneticCode geneticCode) {
 		GeneticCodeSlot gcs = new GeneticCodeSlot();
 		gcs.addGeneticCode(geneticCode);

@@ -9,5 +9,5 @@ public interface Timeout {
 	 * Azt határozza meg, hogy a kör leteltével mi kell történjen az adott
 	 * objektummal.
 	 */
-	public void timeout();
+	void timeout();
 }

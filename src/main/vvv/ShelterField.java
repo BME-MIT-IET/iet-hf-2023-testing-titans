@@ -18,6 +18,7 @@ public class ShelterField extends Field {
 	}
 
 	/** Amikor ideér a játékos, odaadja neki a védőfelszerelést. */
+	@Override
 	public void collect(Player player) {
 		player.give(inventory);
 		Equipment remain = inventory.getEquipment();

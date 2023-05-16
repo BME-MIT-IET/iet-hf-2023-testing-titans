@@ -15,7 +15,7 @@ public abstract class MaterialSlot extends Slot {
 	 * 
 	 * @param maxValue
 	 */
-	public MaterialSlot(int maxValue) {
+	protected MaterialSlot(int maxValue) {
 		super(maxValue);
 	}
 
@@ -29,6 +29,7 @@ public abstract class MaterialSlot extends Slot {
 	/**
 	 * A maximális anyagszintig tölti a tárolót.
 	 */
+	@Override
 	public void fillToMax() {
 		value = maxValue;
 	}
@@ -36,6 +37,7 @@ public abstract class MaterialSlot extends Slot {
 	/**
 	 * Az anyag átadást felüldefiniálja és a virológushoz áttölteti az a tartalmát.
 	 */
+	@Override
 	public void handleMaterialGiving(Player p) {
 		p.fillAll(this);
 	}
@@ -44,6 +46,7 @@ public abstract class MaterialSlot extends Slot {
 	 * Az anyag megsemmisítést kezelő metódus, melyben eldobásra kerülnek a
 	 * jelenlegi anyagmennyiség.
 	 */
+	@Override
 	public void handleClearMaterial() {
 		value = 0;
 	}
