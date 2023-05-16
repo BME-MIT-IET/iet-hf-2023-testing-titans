@@ -23,7 +23,7 @@ public abstract class Field {
 	/** Hozzáadja a virológust a mezőhöz, ezáltal átlépteti oda. */
 	public void addPlayer(Player player) {
 		players.add(player);
-		if (infected.size() > 0) {
+		if (!infected.isEmpty()) {
 			BearEffect be = new BearEffect();
 			player.infect(be);
 			addInfected(player);

@@ -14,6 +14,7 @@ public class ForgetAgentEffect extends AgentEffect {
 	/**
 	 * Lekéri a virológustól a genetikai kódok tárolóját és törli annak tartalmát.
 	 */
+	@Override
 	public void onAttach(Player player) {
 		player.clearGeneticCodes();
 	}

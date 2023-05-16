@@ -10,7 +10,7 @@ public class AgentSlot extends Slot {
 	/**
 	 * Az megismert ágensek listája.
 	 */
-	private List<Agent> agents = new LinkedList<Agent>();
+	private List<Agent> agents = new LinkedList<>();
 
 	/**
 	 * Létrehozza az ágens tárolót és 3-ra állítja a maximális méretét.
@@ -23,8 +23,7 @@ public class AgentSlot extends Slot {
 	 * Megadja, hogy összesen hány felhasználható ágens van a tárolóban.
 	 */
 	public int getValue() {
-		int size = agents.size();
-		return size;
+		return agents.size();
 	}
 
 	/**
@@ -39,8 +38,9 @@ public class AgentSlot extends Slot {
 	 * mennyiséggel, ameddig az meg nem telik teljesen, vagy a tárolóból el nem fogy
 	 * az anyag.
 	 */
+	@Override
 	public void fillIt(AgentSlot as) {
-		while (as.agents.size() < maxValue && agents.size() > 0) {
+		while (as.agents.size() < maxValue && !agents.isEmpty()) {
 			Agent a = agents.remove(0);
 			a.setOwner(as.owner);
 			as.agents.add(a);
@@ -63,6 +63,7 @@ public class AgentSlot extends Slot {
 	 * Lekezeli az ágenst eltávolító feladatot és eltávolítja az adott ágenst a
 	 * tárolóból.
 	 */
+	@Override
 	public void handleRemoveAgent(Agent a) {
 		agents.remove(a);
 	}
@@ -72,6 +73,7 @@ public class AgentSlot extends Slot {
 	 * 
 	 * @return A ágensek listájának referenciája.
 	 */
+	@Override
 	public List<Agent> getAgents() {
 		return agents;
 	}

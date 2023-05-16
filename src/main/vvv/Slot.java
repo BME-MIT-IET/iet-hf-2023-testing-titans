@@ -1,5 +1,6 @@
 package vvv;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -21,7 +22,7 @@ public abstract class Slot {
 	 * 
 	 * @param maxValue A maximális kapacitás értéke.
 	 */
-	public Slot(int maxValue) {
+	protected Slot(int maxValue) {
 		this.maxValue = maxValue;
 	}
 
@@ -172,7 +173,7 @@ public abstract class Slot {
 	 *         null.
 	 */
 	public List<GeneticCode> getGeneticCodes() {
-		return null;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -193,7 +194,7 @@ public abstract class Slot {
 	 *         null.
 	 */
 	public List<Equipment> getEquipments() {
-		return null;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -226,7 +227,7 @@ public abstract class Slot {
 	 *         null.
 	 */
 	public List<Agent> getAgents() {
-		return null;
+		return Collections.emptyList();
 	}
 
 	/**

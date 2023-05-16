@@ -23,6 +23,7 @@ public class BagEquipment extends Equipment {
 	/**
 	 * Hozzáadja az általa nyújtott tárolókat a tulajdonosának készletéhez.
 	 */
+	@Override
 	public void onAttach(Player player) {
 		this.player = player;
 		for (Slot s : slots) {
@@ -34,6 +35,7 @@ public class BagEquipment extends Equipment {
 	 * Leválasztja az általa nyújtott tárolókat a korábbi tulajdonosának
 	 * készletéből, illetve eldobja a tárolókban maradó anyagokat.
 	 */
+	@Override
 	public void onDetach() {
 		if (player == null) {
 			return;

@@ -2,6 +2,7 @@ package vvv;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /** A virológust reprezentálja. */
 public class Player {
@@ -27,6 +28,7 @@ public class Player {
 	private boolean dead = false;
 
 	private Equipment equipmentToSwap;
+	private Random random = new Random();
 
 	/** Virológus konstruktora. */
 	public Player(String name) {
@@ -95,7 +97,7 @@ public class Player {
 	 * A paraméterként kapott virológus, a szintén hasonlóan megkapott ágenst kente
 	 * fel a virológusra, aki erre már nem tud reagálni.
 	 */
-	public void anointedByFinal(Player player, Agent agent) {
+	public void anointedByFinal(Agent agent) {
 		agent.activate(this);
 	}
 
@@ -143,7 +145,7 @@ public class Player {
 		}
 		if (!handled) {
 			int n = inventory.getEquipments().size();
-			int equipmentNumber = (int) (Math.random() * n);
+			int equipmentNumber = random.nextInt() % n;
 			EquipmentSlot es = inventory.takeOutEquipment(equipmentNumber);
 			player.fillAll(es);
 		}

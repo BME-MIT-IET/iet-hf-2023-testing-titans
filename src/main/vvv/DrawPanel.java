@@ -139,9 +139,11 @@ public class DrawPanel extends Canvas {
 	/**
 	 * Újra rajzolja a kijelző tartalmát a belső tagváltozóinak segítségével.
 	 */
+	@Override
 	public void paint(Graphics g) {
+		String fontName = "Calibri";
 		if (playerName == null) {
-			Font font = new Font("Calibri", Font.BOLD, 20);
+			Font font = new Font(fontName, Font.BOLD, 20);
 			g.setFont(font);
 			g.setColor(Color.WHITE);
 			FontRenderContext frc = new FontRenderContext(null, true, true);
@@ -158,7 +160,7 @@ public class DrawPanel extends Canvas {
 		if (moreVirologists)
 			g.drawImage(doctorsImg, 160, 220, null);
 		g.setColor(Color.white);
-		Font font = new Font("Calibri", Font.BOLD, 20);
+		Font font = new Font(fontName, Font.BOLD, 20);
 		g.setFont(font);
 		FontRenderContext frc = new FontRenderContext(null, true, true);
 		Rectangle2D r2D = font.getStringBounds(playerName, frc);
@@ -166,51 +168,51 @@ public class DrawPanel extends Canvas {
 		int rX = (int) Math.round(r2D.getX());
 		int wx = (this.getWidth() / 2) - (rWidth / 2) - rX;
 		g.drawString(playerName, wx, 50);
-		g.setFont(new Font("Calibri", Font.BOLD, 14));
+		g.setFont(new Font(fontName, Font.BOLD, 14));
 		g.drawString("Élő virológusok:", 20, 100);
-		g.setFont(new Font("Calibri", Font.PLAIN, 14));
+		g.setFont(new Font(fontName, Font.PLAIN, 14));
 		g.drawString(playerCount, 125, 100);
-		g.setFont(new Font("Calibri", Font.BOLD, 14));
+		g.setFont(new Font(fontName, Font.BOLD, 14));
 		g.drawString("Jelenlegi mező:", 20, 130);
-		g.setFont(new Font("Calibri", Font.PLAIN, 14));
+		g.setFont(new Font(fontName, Font.PLAIN, 14));
 		g.drawString(playerCurrentField, 20, 150);
-		g.setFont(new Font("Calibri", Font.BOLD, 14));
+		g.setFont(new Font(fontName, Font.BOLD, 14));
 		g.drawString("Szomszédos mezők:", 20, 180);
-		g.setFont(new Font("Calibri", Font.PLAIN, 14));
+		g.setFont(new Font(fontName, Font.PLAIN, 14));
 		int n = 0;
 		for (String fn : neighborFields) {
 			g.drawString(fn, 20, 200 + n * 20);
 			n++;
 		}
 
-		g.setFont(new Font("Calibri", Font.BOLD, 14));
+		g.setFont(new Font(fontName, Font.BOLD, 14));
 		g.drawString("Anyagmennyiség:", 20, 370);
-		g.setFont(new Font("Calibri", Font.PLAIN, 14));
+		g.setFont(new Font(fontName, Font.PLAIN, 14));
 		g.drawString(aminoStatus, 20, 400);
 		g.drawString(nucleoStatus, 20, 420);
 
-		g.setFont(new Font("Calibri", Font.BOLD, 14));
+		g.setFont(new Font(fontName, Font.BOLD, 14));
 		g.drawString("Megismert genetikai kódok:", 160, 370);
-		g.setFont(new Font("Calibri", Font.PLAIN, 14));
+		g.setFont(new Font(fontName, Font.PLAIN, 14));
 		g.drawString(learnedGeneticCodes, 160, 400);
 
-		g.setFont(new Font("Calibri", Font.BOLD, 14));
+		g.setFont(new Font(fontName, Font.BOLD, 14));
 		g.drawString("Állapot:", 390, 150);
-		g.setFont(new Font("Calibri", Font.PLAIN, 14));
+		g.setFont(new Font(fontName, Font.PLAIN, 14));
 		g.drawString(playerState, 390, 170);
 
-		g.setFont(new Font("Calibri", Font.BOLD, 14));
+		g.setFont(new Font(fontName, Font.BOLD, 14));
 		g.drawString("Effektek:", 390, 200);
-		g.setFont(new Font("Calibri", Font.PLAIN, 14));
+		g.setFont(new Font(fontName, Font.PLAIN, 14));
 		n = 0;
 		for (String e : effects) {
 			g.drawString(e, 390, 220 + n * 20);
 			n++;
 		}
 
-		g.setFont(new Font("Calibri", Font.BOLD, 14));
+		g.setFont(new Font(fontName, Font.BOLD, 14));
 		g.drawString("Ágensek:", 390, 370);
-		g.setFont(new Font("Calibri", Font.PLAIN, 14));
+		g.setFont(new Font(fontName, Font.PLAIN, 14));
 		n = 0;
 		for (String a : agents) {
 			g.drawString(a, 390, 390 + n * 20);

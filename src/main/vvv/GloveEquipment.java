@@ -9,8 +9,9 @@ public class GloveEquipment extends Equipment {
 	 * A tulajdonosára felkent ágens hatását a felkenő virológusra ráhelyezi, a
 	 * művelet sikerességét jelezve igazzal tér vissza.
 	 */
+	@Override
 	public boolean handleAnointedBy(Player player, Agent agent) {
-		player.anointedByFinal(player, agent);
+		player.anointedByFinal(agent);
 		return true;
 	}
 

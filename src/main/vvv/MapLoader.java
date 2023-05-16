@@ -11,11 +11,6 @@ import java.util.Scanner;
 
 public class MapLoader {
 	/**
-	 * A parancsok soronkénti beolvasásához szükséges objektum.
-	 */
-	private Scanner scan = new Scanner(System.in);
-
-	/**
 	 * Egy adott játékmenethez tartozó konfigurációban megjelenő mező objektumok és
 	 * a hozzájuk tartozó szöveges azonosító.
 	 */
@@ -32,7 +27,7 @@ public class MapLoader {
 	 * A játékban a bemeneti nyelvben meghatározott azonosítóhoz tartozó genetikai
 	 * kód referenciák vannak benne, a gyorsabb eléréshez.
 	 */
-	private Map<String, GeneticCode> geneticCodes = new HashMap<String, GeneticCode>();
+	private static final Map<String, GeneticCode> geneticCodes = new HashMap<>();
 	{
 		geneticCodes.put("prot", ProtectorGeneticCode.getInstance());
 		geneticCodes.put("numb", NumbingGeneticCode.getInstance());
@@ -175,16 +170,14 @@ public class MapLoader {
 	 * @param fileName A konfigurációs fájl neve.
 	 */
 	public MapLoader(String fileName) {
-		try {
-			FileReader fs = new FileReader(new File(fileName), StandardCharsets.UTF_8);
-			scan = new Scanner(fs);
+		try(FileReader fs = new FileReader(new File(fileName), StandardCharsets.UTF_8);
+			Scanner scan = new Scanner(fs)) {
 			while (scan.hasNext()) {
 				String line = scan.nextLine();
 				interpretCommand(line);
 			}
-		} catch (Exception e) {
-		} finally {
-			scan.close();
+		} catch(Exception e){
+			System.out.println("Can not open the file.");
 		}
 	}
 }

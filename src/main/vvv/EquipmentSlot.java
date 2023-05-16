@@ -10,7 +10,7 @@ public class EquipmentSlot extends Slot {
 	/**
 	 * A tárolóban lévő védőfelszerelések összesége.
 	 */
-	private List<Equipment> equipments = new LinkedList<Equipment>();
+	private List<Equipment> equipments = new LinkedList<>();
 
 	/**
 	 * Létrehozz a tárolót és beálíltja a tároló maximális kapacitását 3-ra.
@@ -23,8 +23,7 @@ public class EquipmentSlot extends Slot {
 	 * Megadja, hogy összesen hány védőfelszerelés van a tárolóban.
 	 */
 	public int getValue() {
-		int size = equipments.size();
-		return size;
+		return equipments.size();
 	}
 
 	/**
@@ -39,8 +38,9 @@ public class EquipmentSlot extends Slot {
 	 * A paraméterül kapott felszerelés tárolót megtölti a benne található
 	 * felszerelésekkel és a saját magából pedig eltávolítja azokat.
 	 */
+	@Override
 	public void fillIt(EquipmentSlot es) {
-		while (es.equipments.size() < maxValue && equipments.size() > 0) {
+		while (es.equipments.size() < maxValue && !equipments.isEmpty()) {
 			Equipment e = equipments.remove(0);
 			if (owner != null) {
 				owner.removeEffect(e);
@@ -64,6 +64,7 @@ public class EquipmentSlot extends Slot {
 	/**
 	 * Eltávolítja az adott felszerelést a tárolóból.
 	 */
+	@Override
 	public Equipment removeEquipment(int n) {
 		Equipment removed = equipments.remove(n);
 		if (owner != null) {
@@ -77,6 +78,7 @@ public class EquipmentSlot extends Slot {
 	 * 
 	 * @param e Az eltávolítandó felszerelés referenciája.
 	 */
+	@Override
 	public void removeEquipment(Equipment e) {
 		equipments.remove(e);
 		if (owner != null) {
@@ -98,8 +100,9 @@ public class EquipmentSlot extends Slot {
 	 * 
 	 * @return Az első felszerelés referenciája.
 	 */
+	@Override
 	public Equipment getEquipment() {
-		if (equipments.size() == 0)
+		if (equipments.isEmpty())
 			return null;
 		return equipments.get(0);
 	}
@@ -109,6 +112,7 @@ public class EquipmentSlot extends Slot {
 	 * 
 	 * @return A felszerelések listájának referenciája.
 	 */
+	@Override
 	public List<Equipment> getEquipments() {
 		return equipments;
 	}

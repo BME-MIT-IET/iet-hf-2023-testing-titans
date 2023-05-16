@@ -16,22 +16,21 @@ import java.util.Random;
  * (például új kör kezdete).
  */
 public class Game implements Subject<GameObserver> {
-	/** A játék generálásáért felelős MapManager példány. */
-	private MapManager mapManager = new MapManager();
 
 	/**
 	 * A játék eseményekre feliratkozókat tárolja. Az eseményeket a GameObserver
 	 * írja le.
 	 */
-	private List<GameObserver> gameObservers = new ArrayList<>();
+	private final List<GameObserver> gameObservers = new ArrayList<>();
 
 	/** A generált játékosok tömbje. */
-	private LinkedList<Player> players = new LinkedList<>();
+	private final LinkedList<Player> players = new LinkedList<>();
 
 	/** A játék összes mezőjének listája. */
 	private List<Field> fields = new ArrayList<>();
 
 	private ListIterator<Player> currentIterator;
+	private static final Random random = new Random();
 
 	private Player player;
 
@@ -39,6 +38,8 @@ public class Game implements Subject<GameObserver> {
 	private boolean stopped = false;
 
 	public Game() {
+		/** A játék generálásáért felelős MapManager példány. */
+		MapManager mapManager = new MapManager();
 		mapManager.generate();
 		fields = mapManager.getFields();
 	}
@@ -51,8 +52,6 @@ public class Game implements Subject<GameObserver> {
 	public void addPlayer(Player player) {
 		players.add(player);
 		this.player = players.get(0);
-
-		Random random = new Random();
 		int index = random.nextInt(fields.size());
 		player.move(fields.get(index));
 	}

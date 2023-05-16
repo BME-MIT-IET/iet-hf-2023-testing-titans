@@ -27,6 +27,7 @@ public class NucleotideSlot extends MaterialSlot {
 	 * mennyiséggel, ameddig az meg nem telik teljesen, vagy a tárolóból el nem fogy
 	 * az anyag.
 	 */
+	@Override
 	public void fillIt(NucleotideSlot nucs) {
 		int nucsDiff = nucs.maxValue - nucs.value;
 		nucs.value = Math.min(nucs.value + value, nucs.maxValue);
@@ -38,6 +39,7 @@ public class NucleotideSlot extends MaterialSlot {
 	 * 
 	 * @return A tárolóban tárolható maximális nukleotid mennyiség.
 	 */
+	@Override
 	public int getMaxNucleotideCount() {
 		return maxValue;
 	}
@@ -47,6 +49,7 @@ public class NucleotideSlot extends MaterialSlot {
 	 * 
 	 * @return A tárolóban lévő nukleotid mennyiség.
 	 */
+	@Override
 	public int getNucleotideCount() {
 		return value;
 	}

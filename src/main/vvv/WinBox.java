@@ -69,9 +69,9 @@ public class WinBox extends ModalBox {
 	 */
 	@Override
 	public void onWin() {
-		this.setLocationRelativeTo(parent);
-		this.setLocation(parent.getX(), parent.getY() + parent.getHeight() - 200);
-		parent.setEnabled(false);
+		this.setLocationRelativeTo(parentFrame);
+		this.setLocation(parentFrame.getX(), parentFrame.getY() + parentFrame.getHeight() - 200);
+		parentFrame.setEnabled(false);
 		setVisible(true);
 	}
 }

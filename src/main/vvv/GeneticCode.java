@@ -13,7 +13,7 @@ public abstract class GeneticCode {
 	protected Inventory inventoryToFill = new Inventory();
 
 	/** Beállítja, hogy az ágens előállításához mennyi anyagra lesz szükség. */
-	public GeneticCode(int aminoCount, int nucleoCount) {
+	protected GeneticCode(int aminoCount, int nucleoCount) {
 		super();
 		inventoryToFill.addSlot(new AminoAcidSlot(aminoCount));
 		inventoryToFill.addSlot(new NucleotideSlot(nucleoCount));

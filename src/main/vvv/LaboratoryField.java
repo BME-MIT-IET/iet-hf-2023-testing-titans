@@ -18,11 +18,13 @@ public class LaboratoryField extends Field {
 	}
 
 	/** Megismerteti az adott virológussal az ott található genetikai kódot. */
+	@Override
 	public void collect(Player player) {
 		player.give(inventory);
 	}
 
 	/** Beállítja az itt található genetikai kódot a paraméterben kapottra */
+	@Override
 	public void setGeneticCode(GeneticCode geneticCode) {
 		GeneticCodeSlot gcs = new GeneticCodeSlot();
 		gcs.addGeneticCode(geneticCode);
