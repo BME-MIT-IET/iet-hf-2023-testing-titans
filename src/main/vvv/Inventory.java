@@ -121,8 +121,8 @@ public class Inventory {
 	 */
 	public EquipmentSlot takeOutEquipment(int n) {
 		EquipmentSlot es2 = new EquipmentSlot();
-		for (Slot slot : slots) {
-			Equipment e = slot.removeEquipment(n);
+		for (int i = 0; i < slots.size(); i++) {
+			Equipment e = slots.get(i).removeEquipment(n);
 			if (e != null) {
 				es2.addEquipment(e);
 				break;
@@ -137,8 +137,8 @@ public class Inventory {
 	 * @param e A törlendő felszerelés referenciája.
 	 */
 	public void removeEquipment(Equipment e) {
-		for (Slot slot : slots) {
-			slot.removeEquipment(e);
+		for (int i = 0; i < slots.size(); i++) {
+			slots.get(i).removeEquipment(e);
 		}
 	}
 
@@ -196,7 +196,7 @@ public class Inventory {
 			if (g != null)
 				return g;
 		}
-		return Collections.emptyList();
+		return null;
 	}
 
 	/**
@@ -224,7 +224,7 @@ public class Inventory {
 			if (e != null)
 				return e;
 		}
-		return Collections.emptyList();
+		return null;
 	}
 
 	/**
@@ -265,7 +265,7 @@ public class Inventory {
 			if (a != null)
 				return a;
 		}
-		return Collections.emptyList();
+		return null;
 	}
 
 	/**

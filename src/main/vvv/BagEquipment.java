@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class BagEquipment extends Equipment {
 	/** A zsák által adott plusz anyag tárolók összesége. */
-	private List<Slot> slots = new ArrayList<>();
+	private final List<Slot> slots = new ArrayList<>();
 
 	/** Létrehozza a táska tartalmát és feltölti azt azzal. */
 	public BagEquipment() {

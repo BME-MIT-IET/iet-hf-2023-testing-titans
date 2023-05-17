@@ -21,23 +21,23 @@ public class StealBox extends ActionBox {
 	/**
 	 * Az anyaglopás callback függvénye.
 	 */
-	private Consumer<Player> mateStealFunc;
+	private final transient Consumer<Player> mateStealFunc;
 	/**
 	 * A felszereléslopás callback függvénye.
 	 */
-	private Consumer<Player> equiStealFunc;
+	private final transient Consumer<Player> equiStealFunc;
 	/**
 	 * Az anyaglopás opció gombja.
 	 */
-	private JRadioButton mateStealBtn = new JRadioButton();
+	private final JRadioButton mateStealBtn = new JRadioButton();
 	/**
 	 * A felszereléslopás opció gombja.
 	 */
-	private JRadioButton equiStealBtn = new JRadioButton();
+	private final JRadioButton equiStealBtn = new JRadioButton();
 	/**
 	 * A meglopható virológusok listája.
 	 */
-	private JComboBox<Player> virologists = new JComboBox<>();
+	private final JComboBox<Player> virologists = new JComboBox<>();
 
 	/**
 	 * Létrehozza az akció ablakot és a virológus által megtámadható virológusokkal

@@ -14,11 +14,11 @@ public class MoveBox extends ActionBox {
 	/**
 	 * A lépés callback függvénye.
 	 */
-	private Consumer<Field> func;
+	private final transient Consumer<Field> func;
 	/**
 	 * A választható mezők listája.
 	 */
-	private JComboBox<Field> fields = new JComboBox<>();
+	private final transient JComboBox<Field> fields = new JComboBox<>();
 
 	/**
 	 * Létrehozza az akció ablakot és a virológus által megközelíthető mezőkkel

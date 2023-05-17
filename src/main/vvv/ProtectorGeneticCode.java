@@ -6,7 +6,7 @@ package vvv;
  */
 public class ProtectorGeneticCode extends GeneticCode {
 	/** Az osztály egyetlen példányát tárolja. */
-	private static ProtectorGeneticCode protectorGeneticCodeInstance = new ProtectorGeneticCode();
+	private static final ProtectorGeneticCode protectorGeneticCodeInstance = new ProtectorGeneticCode();
 
 	/** Meghívja őse konstruktorát 3, 1 paraméterekkel. */
 	private ProtectorGeneticCode() {

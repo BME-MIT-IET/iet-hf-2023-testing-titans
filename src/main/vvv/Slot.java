@@ -194,7 +194,7 @@ public abstract class Slot {
 	 *         null.
 	 */
 	public List<Equipment> getEquipments() {
-		return Collections.emptyList();
+		return null;
 	}
 
 	/**
@@ -227,7 +227,7 @@ public abstract class Slot {
 	 *         null.
 	 */
 	public List<Agent> getAgents() {
-		return Collections.emptyList();
+		return null;
 	}
 
 	/**

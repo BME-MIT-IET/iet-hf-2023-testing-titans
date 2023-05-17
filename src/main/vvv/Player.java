@@ -10,16 +10,16 @@ public class Player {
 	 * Ebben a tömbben tárolódnak azok az ágensek hatásai, amik éppen a játékoson
 	 * vannak.
 	 */
-	private List<Effect> effects = new ArrayList<>();
+	private final List<Effect> effects = new ArrayList<>();
 
 	/** A virológus neve. */
-	private String name;
+	private final String name;
 
 	/**
 	 * A virológus ebben az objektumban tárolja a nála lévő anyagokat, eszközöket,
 	 * ágenseket, illetve a megismert genetikai kódokat.
 	 */
-	private Inventory inventory;
+	private final Inventory inventory;
 
 	/** Jelenleg ezen a mezőn áll a virológus. */
 	private Field currentField = null;
@@ -28,7 +28,7 @@ public class Player {
 	private boolean dead = false;
 
 	private Equipment equipmentToSwap;
-	private Random random = new Random();
+	private final Random random = new Random();
 
 	/** Virológus konstruktora. */
 	public Player(String name) {

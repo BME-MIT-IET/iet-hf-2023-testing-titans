@@ -6,10 +6,10 @@ import java.util.List;
 /** A view értesítéséért felelős osztály. */
 public class ModelPublisher {
 	/** Egyetlen példány tárolásáért felelős statikus változó. */
-	private static ModelPublisher modelPublisher = new ModelPublisher();
+	private static final ModelPublisher modelPublisher = new ModelPublisher();
 
 	/** A feliratkozott view-kat tárolja. */
-	private List<ModelObserver> modelObservers = new ArrayList<>();
+	private final List<ModelObserver> modelObservers = new ArrayList<>();
 
 	/** Visszaadja az egyetlen példányt. */
 	public static ModelPublisher getModelPublisher() {
