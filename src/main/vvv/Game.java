@@ -27,7 +27,7 @@ public class Game implements Subject<GameObserver> {
 	private final LinkedList<Player> players = new LinkedList<>();
 
 	/** A játék összes mezőjének listája. */
-	private List<Field> fields = new ArrayList<>();
+	protected List<Field> fields = new ArrayList<>();
 
 	private ListIterator<Player> currentIterator;
 	private static final Random random = new Random();
