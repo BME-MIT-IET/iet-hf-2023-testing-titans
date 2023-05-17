@@ -260,15 +260,15 @@ public class Player {
 	 * @return if the player can take action
 	 */
 	public boolean takeAction() {
-		boolean cantakeAction = true;
+		boolean canTakeAction = true;
 		for (int i = 0; i < effects.size(); i++) {
 			Effect e = effects.get(i);
 			if (e.handleTakeAction()) {
-				cantakeAction = false;
+				canTakeAction = false;
 				break;
 			}
 		}
-		return cantakeAction;
+		return canTakeAction;
 	}
 
 	/** Hozzáad egy hatást a virolgósuhoz. */

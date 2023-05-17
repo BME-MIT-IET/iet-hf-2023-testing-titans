@@ -179,8 +179,9 @@ public class Inventory {
 	public GeneticCode getGeneticCode() {
 		for (Slot s : slots) {
 			GeneticCode g = s.getGeneticCode();
-			if (g != null)
+			if (g != null) {
 				return g;
+			}
 		}
 		return null;
 	}
@@ -193,8 +194,9 @@ public class Inventory {
 	public List<GeneticCode> getGeneticCodes() {
 		for (Slot s : slots) {
 			List<GeneticCode> g = s.getGeneticCodes();
-			if (g != null)
+			if (g != null) {
 				return g;
+			}
 		}
 		return Collections.emptyList();
 	}
@@ -207,8 +209,9 @@ public class Inventory {
 	public Equipment getEquipment() {
 		for (Slot s : slots) {
 			Equipment e = s.getEquipment();
-			if (e != null)
+			if (e != null) {
 				return e;
+			}
 		}
 		return null;
 	}
@@ -221,8 +224,9 @@ public class Inventory {
 	public List<Equipment> getEquipments() {
 		for (Slot s : slots) {
 			List<Equipment> e = s.getEquipments();
-			if (!e.isEmpty())
+			if (!e.isEmpty()) {
 				return e;
+			}
 		}
 		return Collections.emptyList();
 	}
@@ -262,8 +266,9 @@ public class Inventory {
 	public List<Agent> getAgents() {
 		for (Slot s : slots) {
 			List<Agent> a = s.getAgents();
-			if (a != null)
+			if (a != null) {
 				return a;
+			}
 		}
 		return Collections.emptyList();
 	}
