@@ -221,7 +221,7 @@ public class Inventory {
 	public List<Equipment> getEquipments() {
 		for (Slot s : slots) {
 			List<Equipment> e = s.getEquipments();
-			if (e != null)
+			if (!e.isEmpty())
 				return e;
 		}
 		return Collections.emptyList();

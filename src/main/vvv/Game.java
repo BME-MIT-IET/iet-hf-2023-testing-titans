@@ -140,7 +140,7 @@ public class Game implements Subject<GameObserver> {
 
 		ModelPublisher.getModelPublisher().publishNextPlayer();
 
-		if (player.takeAction()) {
+		if (!player.takeAction()) {
 			ModelPublisher.getModelPublisher().publishSkip();
 			return;
 		}
