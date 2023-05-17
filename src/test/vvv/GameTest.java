@@ -189,7 +189,8 @@ public class GameTest {
     }
 
     static class TestGame extends Game {
-        public TestGame() {
+        @Override
+        protected void init() {
             this.fields.add(new FreeField());
         }
     };

@@ -38,6 +38,10 @@ public class Game implements Subject<GameObserver> {
 	private boolean stopped = false;
 
 	public Game() {
+		init();
+	}
+
+	protected void init() {
 		/** A játék generálásáért felelős MapManager példány. */
 		MapManager mapManager = new MapManager();
 		mapManager.generate();
