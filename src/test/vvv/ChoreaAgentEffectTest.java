@@ -28,7 +28,7 @@ class ChoreaAgentEffectTest {
     @Test
     void handleTakeAction_UndeterministicTwoFields_Succeed() {
         // Arrange
-        // No further arrangement neededs
+        // No further arrangement needed
 
         // Act
         player.addAgentEffect(choreaAgentEffect);
