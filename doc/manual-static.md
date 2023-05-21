@@ -24,18 +24,21 @@ is. Tipikus hibák közé a következők tartoztak:
   - Javítás: Láthatóságok nagyobb korlátozása, egységbezárás növelése
 - Nem elmentett és final adattagok nem jelzése
   - Javítás: Transient/Final felvétele az érintett adattagokhoz, átláthatóság növelése
-
 - *Foreach* használatának hiánya
   - Javítás: *Foreach* ciklusok beiktatása a lehető legtöbb helyre, átláthatóság növelése
 - Hibás try-catch block
   - Javítás: *try(...)* használata az adott részen.
+- Publicus teszt osztály.
+  - Javítás: Teszt osztály public paraméterének eltávolítása.
+- Tesztelésnél a várt és kapott érték felcserélése az *Assert*-ben.
+  - Javítás: Helyes sorrendbe tétel.
 
 ## Refaktorálásból eredő hibák - SpotBug/SonarLint
 
 Vannak refaktorálási javaslatok, ahol tudatosan az eszközök szerinti rossz módszert használjuk, mert kijavításuk 
 több hibát is maga után von. A következő refaktorálási üzenetekre kiemelt figyelmet kell fordítani:
 - *null* visszaadása egy *Collections.emptyList()* helyett.
-  - A programban egy helyen máshogy értelmezi ha egy lista üres, vagy null.
+  - A programban egy helyen máshogy értelmezi ha egy lista üres, vagy null. (class Slot - getGeneticCode())
 - *for* használata *foreach* helyett
   - Foreach esetén a collection tartalmát csak változtatni lehet, hozzáadni és törölni belőle elemet nem.
   Néhány helyen több híváson keresztül történik az elemek hozzáadása és elvétele, melyet ezek az eszközök

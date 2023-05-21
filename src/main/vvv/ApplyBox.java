@@ -31,7 +31,7 @@ public class ApplyBox extends ActionBox {
 	 * 
 	 * @param parent A szülő ablak referenciája.
 	 * @param func   A callback függvény a az ágens felkenéshez.
-	 * @param player A virológus, aki éppen cselekszik.
+	 * @param game A játék.
 	 */
 	public ApplyBox(JFrame parent, BiConsumer<Agent, Player> func, Game game) {
 		super(parent, "Válaszd ki a használni kívánt ágenst, és az áldozatot!");
