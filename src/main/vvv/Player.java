@@ -257,17 +257,18 @@ public class Player {
 	/**
 	 * Cselekvésre szólítja fel a virológust, amennyiben nincs semmilyen cselekvését
 	 * befolyásoló hatás alatt.
+	 * @return if the player can take action
 	 */
 	public boolean takeAction() {
-		boolean cantTakeAction = false;
+		boolean canTakeAction = true;
 		for (int i = 0; i < effects.size(); i++) {
 			Effect e = effects.get(i);
 			if (e.handleTakeAction()) {
-				cantTakeAction = true;
+				canTakeAction = false;
 				break;
 			}
 		}
-		return cantTakeAction;
+		return canTakeAction;
 	}
 
 	/** Hozzáad egy hatást a virolgósuhoz. */

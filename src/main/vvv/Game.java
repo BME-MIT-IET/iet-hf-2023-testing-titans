@@ -27,7 +27,7 @@ public class Game implements Subject<GameObserver> {
 	private final LinkedList<Player> players = new LinkedList<>();
 
 	/** A játék összes mezőjének listája. */
-	private List<Field> fields = new ArrayList<>();
+	protected List<Field> fields = new ArrayList<>();
 
 	private ListIterator<Player> currentIterator;
 	private static final Random random = new Random();
@@ -38,6 +38,11 @@ public class Game implements Subject<GameObserver> {
 	private boolean stopped = false;
 
 	public Game() {
+		init();
+	}
+
+	protected void init() {
+		/** A játék generálásáért felelős MapManager példány. */
 		MapManager mapManager = new MapManager();
 		mapManager.generate();
 		fields = mapManager.getFields();
@@ -139,7 +144,7 @@ public class Game implements Subject<GameObserver> {
 
 		ModelPublisher.getModelPublisher().publishNextPlayer();
 
-		if (player.takeAction()) {
+		if (!player.takeAction()) {
 			ModelPublisher.getModelPublisher().publishSkip();
 			return;
 		}

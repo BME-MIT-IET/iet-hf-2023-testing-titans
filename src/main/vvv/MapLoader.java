@@ -40,10 +40,10 @@ public class MapLoader {
 	 * @return A megtalált mező referenciája, ha nincs ilyen akkor null értékkel tér
 	 *         vissza.
 	 */
-	private Field findField(String id) {
-		for (var field : fields.entrySet()) {
-			if (id.equals(fields.get(field.getKey()))) {
-				return field.getKey();
+	public Field findField(String ID) {
+		for (Map.Entry<Field, String> entry : fields.entrySet()) {
+			if (ID.equals(entry.getValue())) {
+				return entry.getKey();
 			}
 		}
 		return null;
@@ -55,7 +55,7 @@ public class MapLoader {
 	 * 
 	 * @param cmd A parancs szövege.
 	 */
-	private void interpretCommand(String cmd) {
+	public void interpretCommand(String cmd) {
 		String[] elements = cmd.split(" ");
 		for (int i = 0; i < elements.length; i++) {
 			elements[i] = elements[i].split(",")[0];
@@ -80,7 +80,7 @@ public class MapLoader {
 	 * @param type A mező típusa.
 	 * @param id   A mező azonosítója.
 	 */
-	private void createField(String type, String id) {
+	public void createField(String type, String ID) {
 		Field field = null;
 		switch (type) {
 			case "labo":
@@ -113,7 +113,7 @@ public class MapLoader {
 	 * @param fieldID1 Az első mező azonosítója.
 	 * @param fieldID2 A második mező azonosítója.
 	 */
-	private void connect(String fieldID1, String fieldID2) {
+	public void connect(String fieldID1, String fieldID2) {
 		Field f1 = findField(fieldID1);
 		Field f2 = findField(fieldID2);
 		if (f1 == null || f2 == null || f1 == f2)
@@ -125,7 +125,7 @@ public class MapLoader {
 	/**
 	 * Létrehoz egy felszerelést az adott azonosítóval és típusból.
 	 * 
-	 * @param type   A felszerelés típusa.
+	 * @param type A felszerelés típusa.
 	 * @return A létrehozott felszerelés referenciája.
 	 */
 	private Equipment genEquiWithID(String type) {
@@ -146,10 +146,10 @@ public class MapLoader {
 	/**
 	 * Hozzáadja az adott típusú és azonosítójú felszerelést a mezőhöz.
 	 * 
-	 * @param f      A mező referenciája.
-	 * @param type   A felszerelés típusa.
+	 * @param f    A mező referenciája.
+	 * @param type A felszerelés típusa.
 	 */
-	private void addEquiField(Field f, String type) {
+	public void addEquiField(Field f, String type) {
 		Equipment e = genEquiWithID(type);
 		if (e != null) {
 			f.setEquipment(e);
@@ -162,7 +162,7 @@ public class MapLoader {
 	 * @param f    A mező referenciája.
 	 * @param type A genetikai kód azonosítója.
 	 */
-	private void addGeneField(Field f, String type) {
+	public void addGeneField(Field f, String type) {
 		GeneticCode g = geneticCodes.get(type);
 		if (g != null) {
 			f.setGeneticCode(g);
@@ -176,14 +176,18 @@ public class MapLoader {
 	 * @param fileName A konfigurációs fájl neve.
 	 */
 	public MapLoader(String fileName) {
-		try(FileReader fs = new FileReader(new File(fileName), StandardCharsets.UTF_8);
-			Scanner scan = new Scanner(fs)) {
+		try (FileReader fs = new FileReader(new File(fileName), StandardCharsets.UTF_8);
+				Scanner scan = new Scanner(fs)) {
 			while (scan.hasNext()) {
 				String line = scan.nextLine();
 				interpretCommand(line);
 			}
-		} catch(Exception e){
+		} catch (Exception e) {
 			System.out.println("Can not open the file.");
 		}
+	}
+
+	/** Ez a konstruktor csak a tesztek miatt lett létrehozva */
+	public MapLoader() {
 	}
 }
