@@ -257,6 +257,7 @@ public class Player {
 	/**
 	 * Cselekvésre szólítja fel a virológust, amennyiben nincs semmilyen cselekvését
 	 * befolyásoló hatás alatt.
+	 * 
 	 * @return if the player can take action
 	 */
 	public boolean takeAction() {

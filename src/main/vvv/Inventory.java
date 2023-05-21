@@ -58,6 +58,7 @@ public class Inventory {
 	/**
 	 * A paraméterként megkapott Inventory példányból mindent megpróbál átmozgatni a
 	 * jelenlegi Inventory példányba.
+	 * 
 	 * @param fromInv Ahonnan átmozgatja a tárolók tartalmát.
 	 */
 	public void fillFrom(Inventory fromInv) {
@@ -198,7 +199,7 @@ public class Inventory {
 				return g;
 			}
 		}
-		return null;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -228,7 +229,7 @@ public class Inventory {
 				return e;
 			}
 		}
-		return null;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -270,7 +271,7 @@ public class Inventory {
 				return a;
 			}
 		}
-		return null;
+		return Collections.emptyList();
 	}
 
 	/**
