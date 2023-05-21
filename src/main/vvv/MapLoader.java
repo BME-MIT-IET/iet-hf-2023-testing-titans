@@ -40,9 +40,9 @@ public class MapLoader {
 	 * @return A megtalált mező referenciája, ha nincs ilyen akkor null értékkel tér
 	 *         vissza.
 	 */
-	public Field findField(String ID) {
+	public Field findField(String id) {
 		for (Map.Entry<Field, String> entry : fields.entrySet()) {
-			if (ID.equals(entry.getValue())) {
+			if (id.equals(entry.getValue())) {
 				return entry.getKey();
 			}
 		}
@@ -80,7 +80,7 @@ public class MapLoader {
 	 * @param type A mező típusa.
 	 * @param id   A mező azonosítója.
 	 */
-	public void createField(String type, String ID) {
+	public void createField(String type, String id) {
 		Field field = null;
 		switch (type) {
 			case "labo":
