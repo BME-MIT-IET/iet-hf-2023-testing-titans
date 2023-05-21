@@ -10,7 +10,7 @@ public class EquipmentSlot extends Slot {
 	/**
 	 * A tárolóban lévő védőfelszerelések összesége.
 	 */
-	private List<Equipment> equipments = new LinkedList<>();
+	private final List<Equipment> equipments = new LinkedList<>();
 
 	/**
 	 * Létrehozz a tárolót és beálíltja a tároló maximális kapacitását 3-ra.

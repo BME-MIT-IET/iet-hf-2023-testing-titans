@@ -7,7 +7,7 @@ package vvv;
  */
 public class StorageField extends Field implements Timeout {
 	/** Ebben tárolja az anyagokat. */
-	private Inventory inventory = new Inventory();
+	private final Inventory inventory = new Inventory();
 
 	/**
 	 * Meghívja őse konstruktorát. Elkészít egy olyan tárolót, ami legfeljebb 3

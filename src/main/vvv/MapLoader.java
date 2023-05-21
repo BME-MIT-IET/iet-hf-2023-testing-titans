@@ -27,18 +27,16 @@ public class MapLoader {
 	 * A játékban a bemeneti nyelvben meghatározott azonosítóhoz tartozó genetikai
 	 * kód referenciák vannak benne, a gyorsabb eléréshez.
 	 */
-	private static final Map<String, GeneticCode> geneticCodes = new HashMap<>();
-	static {
-		geneticCodes.put("prot", ProtectorGeneticCode.getInstance());
-		geneticCodes.put("numb", NumbingGeneticCode.getInstance());
-		geneticCodes.put("forg", ForgetGeneticCode.getInstance());
-		geneticCodes.put("chor", ChoreaGeneticCode.getInstace());
-	}
+	private static final Map<String, GeneticCode> geneticCodes = new HashMap<>(
+		Map.of("prot", ProtectorGeneticCode.getInstance(),
+			"numb", NumbingGeneticCode.getInstance(),
+			"forg", ForgetGeneticCode.getInstance(),
+			"chor", ChoreaGeneticCode.getInstace()));
 
 	/**
 	 * Az adott azonosítóhoz megkeresi a megfelelő mezőt.
 	 * 
-	 * @param ID A mező azonosítója.
+	 * @param id A mező azonosítója.
 	 * @return A megtalált mező referenciája, ha nincs ilyen akkor null értékkel tér
 	 *         vissza.
 	 */
@@ -80,24 +78,32 @@ public class MapLoader {
 	 * a játékvezérlőhöz.
 	 * 
 	 * @param type A mező típusa.
-	 * @param ID   A mező azonosítója.
+	 * @param id   A mező azonosítója.
 	 */
 	public void createField(String type, String ID) {
 		Field field = null;
-		if (type.equals("labo")) {
-			field = new LaboratoryField();
-		} else if (type.equals("free")) {
-			field = new FreeField();
-		} else if (type.equals("shel")) {
-			field = new ShelterField();
-		} else if (type.equals("stor")) {
-			field = new StorageField();
-		} else if (type.equals("infe")) {
-			field = new InfectiousLaboratoryField();
+		switch (type) {
+			case "labo":
+				field = new LaboratoryField();
+				break;
+			case "free":
+				field = new FreeField();
+				break;
+			case "shel":
+				field = new ShelterField();
+				break;
+			case "stor":
+				field = new StorageField();
+				break;
+			case "infe":
+				field = new InfectiousLaboratoryField();
+				break;
+			default:
+				break;
 		}
 		if (field != null) {
-			field.setName(ID);
-			fields.put(field, ID);
+			field.setName(id);
+			fields.put(field, id);
 		}
 	}
 
@@ -123,16 +129,18 @@ public class MapLoader {
 	 * @return A létrehozott felszerelés referenciája.
 	 */
 	private Equipment genEquiWithID(String type) {
-		if (type.equals("glov")) {
-			return new WearGloveEquipment();
-		} else if (type.equals("prot")) {
-			return new ProtectorEquipment();
-		} else if (type.equals("bag")) {
-			return new BagEquipment();
-		} else if (type.equals("axe")) {
-			return new AxeEquipment();
+		switch (type) {
+			case "glov":
+				return new WearGloveEquipment();
+			case "prot":
+				return new ProtectorEquipment();
+			case "bag":
+				return new BagEquipment();
+			case "axe":
+				return new AxeEquipment();
+			default:
+				return null;
 		}
-		return null;
 	}
 
 	/**
@@ -164,7 +172,7 @@ public class MapLoader {
 	/**
 	 * Az adott fájlból olvassa be és futtatja a nyelvtannak megfelelő utasításokból
 	 * álló fájlt.
-	 * 
+	 *
 	 * @param fileName A konfigurációs fájl neve.
 	 */
 	public MapLoader(String fileName) {

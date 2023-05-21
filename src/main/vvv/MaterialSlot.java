@@ -12,8 +12,7 @@ public abstract class MaterialSlot extends Slot {
 
 	/**
 	 * Létrehozza az anyag tárolót, adott kapacitással.
-	 * 
-	 * @param maxValue
+	 * @param maxValue A felvehető érték maximuma
 	 */
 	protected MaterialSlot(int maxValue) {
 		super(maxValue);
