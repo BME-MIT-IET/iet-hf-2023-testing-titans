@@ -21,11 +21,11 @@ public class DrawPanel extends Canvas {
 	/**
 	 * A virológushoz tartozó karakter képét tárolja.
 	 */
-	private BufferedImage oneDocImg;
+	private transient BufferedImage oneDocImg;
 	/**
 	 * Az egy mezőn megjelenő többi virológust jelképező kép.
 	 */
-	private BufferedImage doctorsImg;
+	private transient BufferedImage doctorsImg;
 	/**
 	 * Megmondja, hogy van-e más virológus jelenleg lépőn kívül.
 	 */

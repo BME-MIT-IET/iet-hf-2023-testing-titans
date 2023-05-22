@@ -22,7 +22,7 @@ public class InfectiousLaboratoryField extends LaboratoryField {
 	@Override
 	public void collect(Player player) {
 		super.collect(player);
-		if (sets.keySet().contains(player)) {
+		if (sets.containsKey(player)) {
 			BearEffect be = new BearEffect();
 			be.setFields(sets.get(player));
 			player.infect(be);

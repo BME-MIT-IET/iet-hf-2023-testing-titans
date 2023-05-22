@@ -12,6 +12,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	    <java.version>1.8</java.version>
+		<sonar.organization>bme-mit-iet-org</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
 	<dependencyManagement>
@@ -49,7 +51,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		 <dependency>
+		<dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <scope>test</scope>
@@ -72,11 +74,11 @@
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
-	</dependencies>
+    </dependencies>
 
 	<build>
-		<sourceDirectory>src/main</sourceDirectory>
-		<testSourceDirectory>src/test</testSourceDirectory>
+        <sourceDirectory>src/main</sourceDirectory>
+    	<testSourceDirectory>src/test</testSourceDirectory>
 
 		<resources>
 			<resource>
@@ -106,7 +108,7 @@
 		</testResources>
 
 		<plugins>
-			 <plugin>
+			<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
@@ -121,8 +123,7 @@
 						<phase>test</phase>
 					</execution>
 				</executions>
-            </plugin>
-
+			</plugin>
 
 			<plugin>
 				<groupId>io.cucumber</groupId>
@@ -148,6 +149,27 @@
                     </properties>
                 </configuration>
             </plugin>
+
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.7</version>
+				<executions>
+					<execution>
+						<id>jacoco-initialize</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>jacoco-report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+        	</plugin>
 		</plugins>
 	</build>
 </project>

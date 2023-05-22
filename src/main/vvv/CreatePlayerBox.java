@@ -21,23 +21,23 @@ public class CreatePlayerBox extends ModalBox {
 	/**
 	 * A virológus nevének megadásához szükséges beviteli mező.
 	 */
-	private JTextField playerNameBox = new JTextField();
+	private final JTextField playerNameBox = new JTextField();
 	/**
 	 * A virológus hozzáadáshoz szükséges gomb.
 	 */
-	private JButton addButton = new JButton("Hozzáadás");
+	private final JButton addButton = new JButton("Hozzáadás");
 	/**
 	 * A játék indításához szükséges gomb.
 	 */
-	private JButton startButton = new JButton("Játék indítása");
+	private final JButton startButton = new JButton("Játék indítása");
 	/**
 	 * A virológus létrehozás callback függvény.
 	 */
-	private Consumer<String> createFunc;
+	private final transient Consumer<String> createFunc;
 	/**
 	 * A játék indítás callback függvénye.
 	 */
-	private Runnable startFunc;
+	private final transient Runnable startFunc;
 
 	/**
 	 * Létrehozza a virológust létrehozó ablakot és elhelyezi rajta beviteli mezőt

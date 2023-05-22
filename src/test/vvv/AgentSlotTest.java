@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class AgentSlotTest {
-    final int SLOT_SIZE = 3;
+    static final int SLOT_SIZE = 3;
 
     AgentSlot agentSlot;
 

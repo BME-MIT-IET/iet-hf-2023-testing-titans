@@ -15,7 +15,7 @@ public class ProtectorEquipment extends Equipment {
 	 */
 	private boolean canProtect = true;
 
-	private static Random random = new Random();
+	private static final Random random = new Random();
 	/**
 	 * Megkapja paraméterként, hogy melyik virológus kent rá mit, majd megpróbálja
 	 * kivédeni a felkenést.

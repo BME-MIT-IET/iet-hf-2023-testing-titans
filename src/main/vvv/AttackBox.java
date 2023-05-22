@@ -15,11 +15,11 @@ public class AttackBox extends ActionBox {
 	/**
 	 * A támadás callback függvénye.
 	 */
-	private final Consumer<Player> func;
+	private final transient Consumer<Player> func;
 	/**
 	 * A megtámadható virológusok listája.
 	 */
-	private JComboBox<Player> virologists = new JComboBox<>();
+	private final JComboBox<Player> virologists = new JComboBox<>();
 
 	/**
 	 * Létrehozza az akció ablakot és a virológushoz tartozó megtámadható
@@ -28,7 +28,7 @@ public class AttackBox extends ActionBox {
 	 * 
 	 * @param parent A szülő ablak.
 	 * @param func   A támadás callback függvénye.
-	 * @param player A támadást kezdő virológus.
+	 * @param game   A játék controllere.
 	 */
 	public AttackBox(JFrame parent, Consumer<Player> func, Game game) {
 		super(parent, "Válaszd ki a megtámadni kívánt virológust!");

@@ -16,28 +16,28 @@ public class MainFrame extends JFrame implements ActionListener, ModelObserver {
 	/**
 	 * A virológust létrehozó callback függvény.
 	 */
-	private Consumer<String> createFunc;
+	private final transient Consumer<String> createFunc;
 	/**
 	 * A játék indítás callback függvénye.
 	 */
-	private Runnable startFunc;
+	private final transient Runnable startFunc;
 	/**
 	 * A rajzfelület referenciája, amelyre kirajzolja a játékot.
 	 */
-	private DrawPanel drawPanel;
+	private final transient DrawPanel drawPanel;
 	/**
 	 * A játék működését megvalósító osztály referenciája.
 	 */
-	private Game game;
+	private final transient Game game;
 	/**
 	 * Az aktuálisan lépő játékos referenciája.
 	 */
-	private Player currentPlayer;
+	private transient Player currentPlayer;
 
 	/**
 	 * A vezérlő referenciája, akihez éppen tartozik az ablak.
 	 */
-	private Controller controller;
+	private final transient Controller controller;
 
 	private JFrame createPlayerBox;
 

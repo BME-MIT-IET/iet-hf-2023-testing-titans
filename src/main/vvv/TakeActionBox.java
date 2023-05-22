@@ -18,28 +18,28 @@ public class TakeActionBox extends ModalBox {
 	/**
 	 * A lépés event gombja.
 	 */
-	private JButton moveButton;
+	private final JButton moveButton;
 	/**
 	 * A kraftolás event gombja.
 	 */
-	private JButton craftButton;
+	private final JButton craftButton;
 	/**
 	 * A ágens felkenés event gombja.
 	 */
-	private JButton applyButton;
+	private final JButton applyButton;
 	/**
 	 * A lebaltázás event gombja.
 	 */
-	private JButton hitButton;
+	private final JButton hitButton;
 	/**
 	 * A lopás event gombja.
 	 */
-	private JButton stealButton;
+	private final JButton stealButton;
 
 	/**
 	 * A cselekvés callback-ek listája.
 	 */
-	private List<Runnable> funcs = new ArrayList<>();
+	private final transient List<Runnable> funcs = new ArrayList<>();
 
 	/**
 	 * Beállít egy gombot a megadott képpel és formázással.

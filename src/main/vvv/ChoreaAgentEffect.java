@@ -16,7 +16,7 @@ public class ChoreaAgentEffect extends AgentEffect {
 	 * Alapértelmezetten ez egy üres lista.
 	 */
 	private List<Field> fields = new ArrayList<>();
-	private static Random random = new Random();
+	private static final Random random = new Random();
 
 	/** Feliratkozik a RoundTimeout-ra 3 körig. */
 	public ChoreaAgentEffect() {

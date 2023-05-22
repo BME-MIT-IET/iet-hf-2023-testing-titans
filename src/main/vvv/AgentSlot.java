@@ -10,7 +10,7 @@ public class AgentSlot extends Slot {
 	/**
 	 * Az megismert ágensek listája.
 	 */
-	private List<Agent> agents = new LinkedList<>();
+	private final List<Agent> agents = new LinkedList<>();
 
 	/**
 	 * Létrehozza az ágens tárolót és 3-ra állítja a maximális méretét.

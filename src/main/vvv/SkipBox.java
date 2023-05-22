@@ -18,11 +18,11 @@ public class SkipBox extends ModalBox {
 	/**
 	 * Az üzenet tartalmát elfogadó gomb.
 	 */
-	private JButton okButton;
+	private final JButton okButton;
 	/**
 	 * Az OK gomb lenyomásának hatására meghívódó függvény.
 	 */
-	private Runnable func;
+	private final transient Runnable func;
 
 	/**
 	 * Létrehozza az ablakot és elhelyezi rajta a kimaradtál a körből üzenetet és

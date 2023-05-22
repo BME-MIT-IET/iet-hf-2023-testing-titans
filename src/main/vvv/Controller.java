@@ -3,10 +3,10 @@ package vvv;
 /** Az MVC architektúra Controllerért valósítja meg. */
 public class Controller {
 	/** A játék példányát tárolja. */
-	private Game game;
+	private final Game game;
 
 	/** A főablak referenciája. */
-	private MainFrame mainFrame;
+	private final MainFrame mainFrame;
 
 	/** A várakozás megvalósításához szükséges igaz-hamis érték. */
 	private boolean waitingForSkip;

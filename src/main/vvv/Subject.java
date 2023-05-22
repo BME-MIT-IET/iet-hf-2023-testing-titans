@@ -11,11 +11,11 @@ public interface Subject<T> {
 	 * Feliratkoztatja "t"-t a T-ben definiált eseményekre. A Subject interfacet
 	 * megvalósító osztály feladata tárolni a feliratkozót.
 	 */
-	public void subscribe(T t);
+	void subscribe(T t);
 
 	/**
 	 * Leiratkoztatja "t"-t az eseményekről. Szintén a Subjectet megvalósító osztály
 	 * feladata.
 	 */
-	public void unsubscribe(T t);
+	void unsubscribe(T t);
 }
