@@ -190,7 +190,7 @@ public class MapLoader {
 				interpretCommand(line);
 			}
 		} catch (Exception e) {
-			logger.error("Can not open the file.");
+			logger.error("Nem tudja megnyitni a fájlt.");
 		}
 	}
 
