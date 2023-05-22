@@ -6,7 +6,7 @@ package vvv;
  */
 public class NumbingGeneticCode extends GeneticCode {
 	/** Az osztály egyetlen példányát tárolja. */
-	private static NumbingGeneticCode numbingGeneticCodeInstance = new NumbingGeneticCode();
+	private static final NumbingGeneticCode numbingGeneticCodeInstance = new NumbingGeneticCode();
 
 	/** Meghívja őse konstruktorát 2, 3 paraméterekkel. */
 	private NumbingGeneticCode() {

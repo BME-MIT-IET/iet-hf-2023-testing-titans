@@ -11,7 +11,7 @@ public class GeneticCodeSlot extends Slot {
 	 * Ebben az objektumban tárolja el a virológus által megismert genetikai
 	 * kódokat.
 	 */
-	private List<GeneticCode> geneticCodes = new ArrayList<>();
+	private final List<GeneticCode> geneticCodes = new ArrayList<>();
 
 	/**
 	 * Létrehozza a tárolót, és beállítja a kapacitását 4-re.

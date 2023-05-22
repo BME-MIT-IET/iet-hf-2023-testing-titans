@@ -6,7 +6,7 @@ package vvv;
  */
 public class ShelterField extends Field {
 	/** Ebben tárolja el a védőfelszereléseket. */
-	private Inventory inventory = new Inventory();
+	private final Inventory inventory = new Inventory();
 
 	/**
 	 * Meghívja őse konstruktorát. Elkészít egy tárolót, ami csak felszereléseket

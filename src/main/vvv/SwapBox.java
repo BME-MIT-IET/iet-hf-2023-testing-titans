@@ -15,15 +15,15 @@ public class SwapBox extends ActionBox {
 	/**
 	 * A felszerelés csere callback függvénye.
 	 */
-	private BiConsumer<Equipment, Equipment> func;
+	private final transient BiConsumer<Equipment, Equipment> func;
 	/**
 	 * A lecserélhető felszerelések listája.
 	 */
-	private JComboBox<Equipment> equipments = new JComboBox<>();
+	private final JComboBox<Equipment> equipments = new JComboBox<>();
 	/**
 	 * A felvehető felszerelés referenciája.
 	 */
-	private Equipment swapEqui;
+	private final transient Equipment swapEqui;
 
 	/**
 	 * Létrehozza az akció ablakot és a virológushoz tartozó felszerelésekkel

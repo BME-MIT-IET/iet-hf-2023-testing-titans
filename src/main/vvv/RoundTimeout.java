@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public class RoundTimeout implements GameObserver {
 	/** Az objektumokat rendeli össze az élettartamukkal. */
-	private Map<Timeout, Integer> timeouts = new HashMap<>();
+	private final Map<Timeout, Integer> timeouts = new HashMap<>();
 
 	/** Az osztály egyetlen példányát tárolja. */
 	private static final RoundTimeout roundTimeoutInstance = new RoundTimeout();

@@ -16,13 +16,9 @@ import javax.swing.JPanel;
  */
 public class WinBox extends ModalBox {
 	/**
-	 * Az üzenetet elfogadó gomb.
-	 */
-	private JButton okButton;
-	/**
 	 * A játék bezárást megvalósító callback függvényt.
 	 */
-	private Runnable exitFunc;
+	private final transient Runnable exitFunc;
 
 	/**
 	 * Létrehozza a győezelem üzenet ablakot és kiírja a győezelm szöveget.
@@ -35,7 +31,7 @@ public class WinBox extends ModalBox {
 		parent.setEnabled(true);
 		this.exitFunc = exitFunc;
 		JLabel label = new JLabel("Gratulálunk megnyerted a játékot.");
-		okButton = new JButton("OK");
+		JButton okButton = new JButton("OK");
 		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.NONE;

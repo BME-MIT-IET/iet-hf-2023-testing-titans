@@ -14,15 +14,15 @@ public class ApplyBox extends ActionBox {
 	/**
 	 * Az ágenst felhasználó callback függvény.
 	 */
-	private final BiConsumer<Agent, Player> func;
+	private final transient BiConsumer<Agent, Player> func;
 	/**
 	 * A megtámadható virológusok listája.
 	 */
-	private JComboBox<Player> players = new JComboBox<>();
+	private final JComboBox<Player> players = new JComboBox<>();
 	/**
 	 * A felhasználható ágensek listája.
 	 */
-	private JComboBox<Agent> agents = new JComboBox<>();
+	private final JComboBox<Agent> agents = new JComboBox<>();
 
 	/**
 	 * Létrehozza az akció ablakot és a virológushoz tartozó megtámadható
@@ -31,7 +31,7 @@ public class ApplyBox extends ActionBox {
 	 * 
 	 * @param parent A szülő ablak referenciája.
 	 * @param func   A callback függvény a az ágens felkenéshez.
-	 * @param player A virológus, aki éppen cselekszik.
+	 * @param game A játék.
 	 */
 	public ApplyBox(JFrame parent, BiConsumer<Agent, Player> func, Game game) {
 		super(parent, "Válaszd ki a használni kívánt ágenst, és az áldozatot!");

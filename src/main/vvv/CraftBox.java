@@ -14,11 +14,11 @@ public class CraftBox extends ActionBox {
 	/**
 	 * Az ágens kraftolás callback függvénye.
 	 */
-	private Consumer<GeneticCode> func;
+	private final transient Consumer<GeneticCode> func;
 	/**
 	 * A megtanult genetikai kódok listája.
 	 */
-	private JComboBox<GeneticCode> geneticCodes = new JComboBox<>();
+	private final JComboBox<GeneticCode> geneticCodes = new JComboBox<>();
 
 	/**
 	 * Létrehozza az akció ablakot és a virológus által megismert genetikai

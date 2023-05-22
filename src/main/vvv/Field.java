@@ -9,13 +9,13 @@ import java.util.List;
  */
 public abstract class Field {
 	/** A mezőn található játékosokat tárolja. */
-	private List<Player> players = new ArrayList<>();
+	private final List<Player> players = new ArrayList<>();
 
 	/** A mezőn található medve vírussal fertőzött játékosok. */
-	private List<Player> infected = new ArrayList<>();
+	private final List<Player> infected = new ArrayList<>();
 
 	/** Szomszédos mezőket tárolja. */
-	private List<Field> neighbors = new ArrayList<>();
+	private final List<Field> neighbors = new ArrayList<>();
 
 	/** A mező neve */
 	private String name;

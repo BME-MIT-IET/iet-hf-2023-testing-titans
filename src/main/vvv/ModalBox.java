@@ -16,7 +16,7 @@ public abstract class ModalBox extends JFrame implements ActionListener, ModelOb
 	/**
 	 * A játék példány.
 	 */
-	protected Game game = null;
+	protected transient Game game;
 
 	/**
 	 * Létrehozza a modális ablakot és elérhetetlenné teszi a szűlő ablakot.
