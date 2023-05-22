@@ -90,8 +90,10 @@ public class GameTest {
 
         // Assert
         assertEquals(p2, game.getCurrentPlayer(), "The current player is the second one");
-        assertEquals(2, calledByHandlers.stream().filter(called -> called.equals("onNextPlayer")).count(), "onNextPlayer was published twice");
-        assertEquals(2, calledByHandlers.stream().filter(called -> called.equals("onTakeAction")).count(), "onTakeAction was published twice");
+        assertEquals(2, calledByHandlers.stream().filter(called -> called.equals("onNextPlayer")).count(),
+                "onNextPlayer was published twice");
+        assertEquals(2, calledByHandlers.stream().filter(called -> called.equals("onTakeAction")).count(),
+                "onTakeAction was published twice");
     }
 
     @Test
@@ -109,11 +111,12 @@ public class GameTest {
 
         // Assert
         assertEquals(p1, game.getCurrentPlayer(), "The current player is the second one");
-        assertEquals(3, calledByHandlers.stream().filter(called -> called.equals("onNextPlayer")).count(), "onNextPlayer was published twice");
-        assertEquals(3, calledByHandlers.stream().filter(called -> called.equals("onTakeAction")).count(), "onTakeAction was published twice");
+        assertEquals(3, calledByHandlers.stream().filter(called -> called.equals("onNextPlayer")).count(),
+                "onNextPlayer was published twice");
+        assertEquals(3, calledByHandlers.stream().filter(called -> called.equals("onTakeAction")).count(),
+                "onTakeAction was published twice");
         assertTrue(calledByHandlers.contains("handleNewRound"), "handleNewRound was published");
     }
-
 
     @Test
     void gameNewRoundPlayerDead() {
@@ -133,7 +136,6 @@ public class GameTest {
         // Assert
         assertEquals(p3, game.getCurrentPlayer(), "The current player is the third one");
     }
-
 
     @Test
     void gameNewRoundSkip() {

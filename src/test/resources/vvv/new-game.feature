@@ -1,5 +1,6 @@
 Feature: New Game
-  Starting a new game with menu
+
+  @NewGame
   Scenario: Successfully create new Game
     Given the game has not started yet
     When the user pressess the new game button

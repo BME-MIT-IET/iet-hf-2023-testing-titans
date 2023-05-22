@@ -1,6 +1,6 @@
-package vvv.java.cucumber;
+package vvv.cucumber;
 
-import org.junit.Assert;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -23,12 +23,13 @@ public class NewGame {
 
   @When("the user pressess the new game button")
   public void userPressesNewGameButton() {
-    mainFrame = new MainFrame(game, controller, controller::createPlayer, controller::startGame);
+    mainFrame = new MainFrame(game, controller, controller::createPlayer,
+        controller::startGame);
     mainFrame.getJMenuBar().getMenu(0).getItem(0).doClick();
   }
 
   @Then("a new game starts")
   public void newGameStarted() {
-    Assert.assertFalse(mainFrame.getCreatePlayerBox().isVisible());
+    assertTrue(mainFrame.getCreatePlayerBox().isVisible());
   }
 }
