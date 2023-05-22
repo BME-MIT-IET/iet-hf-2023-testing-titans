@@ -286,7 +286,7 @@ class PlayerTest {
         player.clearGeneticCodes();
 
         // Assert
-        assertEquals(player.getGeneticCodes().size(), 0, "The player forgot all the genetic codes");
+        assertEquals(0, player.getGeneticCodes().size(), "The player forgot all the genetic codes");
     }
 
     @Test
