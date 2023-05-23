@@ -43,3 +43,16 @@ több hibát is maga után von. A következő refaktorálási üzenetekre kiemel
   - Foreach esetén a collection tartalmát csak változtatni lehet, hozzáadni és törölni belőle elemet nem.
   Néhány helyen több híváson keresztül történik az elemek hozzáadása és elvétele, melyet ezek az eszközök
   nem vesznek észre, így hibát eredményeznek.
+   
+  
+## SonarCloud
+
+A SonarCloud beépítése után új hibákat észlelt a kód, melyeket elkezdtünk review-zni.
+- Singleton osztályokra bejelzett
+  - Lezártuk az issue-t, tervezői döntés volt.
+- Nem használt paraméterek függvényeknél
+  - False positive, leszármazott felülírja a függvényt, és használja.
+- Egy előző pontban is jelzett *null* visszatérési érték lecserélését jelezte
+  - *won't fix* taggel láttuk el, sok idő lenne helyesen kijavítani, tesztek is erre tesztelnek.
+- Logger használata System.Println helyett.
+  - *SLF4J Logger* használata.
