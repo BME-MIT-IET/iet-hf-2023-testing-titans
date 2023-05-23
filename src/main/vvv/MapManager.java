@@ -19,7 +19,7 @@ public class MapManager {
 	 * virológusokat (players) is a játéktérre.
 	 */
 	public void generate() {
-		fields = new MapLoader("./map.txt").getFields();
+		fields = new MapLoader("./res/map.txt").getFields();
 	}
 
 	/** Visszaadja a játékban lévő mezők listáját. */

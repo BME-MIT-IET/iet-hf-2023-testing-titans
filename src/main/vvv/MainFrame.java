@@ -39,6 +39,8 @@ public class MainFrame extends JFrame implements ActionListener, ModelObserver {
 	 */
 	private final transient Controller controller;
 
+	private JFrame createPlayerBox;
+
 	/**
 	 * Létrehozza a főablakot, elmenti a callback függvényeket, továbbá létrehozza a
 	 * rajzfelületet.
@@ -85,6 +87,7 @@ public class MainFrame extends JFrame implements ActionListener, ModelObserver {
 	public void actionPerformed(ActionEvent e) {
 		JFrame newGame = new CreatePlayerBox(this, createFunc, startFunc);
 		newGame.setVisible(true);
+		createPlayerBox = newGame;
 	}
 
 	/**
@@ -126,5 +129,9 @@ public class MainFrame extends JFrame implements ActionListener, ModelObserver {
 		SwapBox sb = new SwapBox(this, this::swapCallback, currentPlayer, e);
 		sb.setVisible(true);
 		controller.setWaitingForSkip(true);
+	}
+
+	public JFrame  getCreatePlayerBox() {
+		return createPlayerBox;
 	}
 }

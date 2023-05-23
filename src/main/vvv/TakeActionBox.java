@@ -79,15 +79,15 @@ public class TakeActionBox extends ModalBox {
 		funcs.add(stealFunc);
 		parent.setEnabled(true);
 		moveButton = new JButton();
-		setButton(moveButton, "./pics/move_64.png");
+		setButton(moveButton, "./res/pics/move_64.png");
 		craftButton = new JButton();
-		setButton(craftButton, "./pics/craft_64.png");
+		setButton(craftButton, "./res/pics/craft_64.png");
 		applyButton = new JButton();
-		setButton(applyButton, "./pics/apply_64.png");
+		setButton(applyButton, "./res/pics/apply_64.png");
 		hitButton = new JButton();
-		setButton(hitButton, "./pics/hit_64.png");
+		setButton(hitButton, "./res/pics/hit_64.png");
 		stealButton = new JButton();
-		setButton(stealButton, "./pics/steal_64.png");
+		setButton(stealButton, "./res/pics/steal_64.png");
 
 		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();

@@ -85,8 +85,8 @@ public class DrawPanel extends Canvas {
 	public DrawPanel() {
 		try {
 			setBackground(Color.BLACK);
-			oneDocImg = ImageIO.read(new File("./pics/oneDoc_150.png"));
-			doctorsImg = ImageIO.read(new File("./pics/doctors_75.png"));
+			oneDocImg = ImageIO.read(new File("./res/pics/oneDoc_150.png"));
+			doctorsImg = ImageIO.read(new File("./res/pics/doctors_75.png"));
 
 		} catch (IOException e) {
 			logger.error(System.getProperty("user.dir"));
