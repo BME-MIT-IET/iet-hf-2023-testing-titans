@@ -14,7 +14,7 @@ public class ChoreaGeneticCode extends GeneticCode {
 	}
 
 	/** Visszaadja az osztály egyetlen példányát. */
-	public static ChoreaGeneticCode getInstace() {
+	public static ChoreaGeneticCode getInstance() {
 		return choreaGeneticCodeInstance;
 	}
 

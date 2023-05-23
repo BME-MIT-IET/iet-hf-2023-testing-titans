@@ -2,7 +2,6 @@ package vvv;
 
 import java.io.File;
 import java.io.FileReader;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -36,10 +35,10 @@ public class MapLoader {
 	 */
 	private static final Map<String, GeneticCode> geneticCodes = new HashMap<>();
 	static {
-			geneticCodes.put("prot", ProtectorGeneticCode.getInstance());
-			geneticCodes.put("numb", NumbingGeneticCode.getInstance());
-			geneticCodes.put("forg", ForgetGeneticCode.getInstance());
-    	geneticCodes.put("chor", ChoreaGeneticCode.getInstace());
+		geneticCodes.put("prot", ProtectorGeneticCode.getInstance());
+		geneticCodes.put("numb", NumbingGeneticCode.getInstance());
+		geneticCodes.put("forg", ForgetGeneticCode.getInstance());
+		geneticCodes.put("chor", ChoreaGeneticCode.getInstance());
 	}
 
 

@@ -59,7 +59,7 @@ class GameTest {
         // Arrange
         Player p = new Player("TestPlayer2win");
         GeneticCodeSlot gcs = new GeneticCodeSlot();
-        gcs.addGeneticCode(ChoreaGeneticCode.getInstace());
+        gcs.addGeneticCode(ChoreaGeneticCode.getInstance());
         gcs.addGeneticCode(NumbingGeneticCode.getInstance());
         gcs.addGeneticCode(ForgetGeneticCode.getInstance());
         gcs.addGeneticCode(ProtectorGeneticCode.getInstance());
