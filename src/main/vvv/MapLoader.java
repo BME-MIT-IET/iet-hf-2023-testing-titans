@@ -27,11 +27,14 @@ public class MapLoader {
 	 * A játékban a bemeneti nyelvben meghatározott azonosítóhoz tartozó genetikai
 	 * kód referenciák vannak benne, a gyorsabb eléréshez.
 	 */
-	private static final Map<String, GeneticCode> geneticCodes = new HashMap<>(
-		Map.of("prot", ProtectorGeneticCode.getInstance(),
-			"numb", NumbingGeneticCode.getInstance(),
-			"forg", ForgetGeneticCode.getInstance(),
-			"chor", ChoreaGeneticCode.getInstace()));
+	private static final Map<String, GeneticCode> geneticCodes = new HashMap<>();
+	static {
+			geneticCodes.put("prot", ProtectorGeneticCode.getInstance());
+			geneticCodes.put("numb", NumbingGeneticCode.getInstance());
+			geneticCodes.put("forg", ForgetGeneticCode.getInstance());
+    	geneticCodes.put("chor", ChoreaGeneticCode.getInstace());
+	}
+
 
 	/**
 	 * Az adott azonosítóhoz megkeresi a megfelelő mezőt.
@@ -176,7 +179,7 @@ public class MapLoader {
 	 * @param fileName A konfigurációs fájl neve.
 	 */
 	public MapLoader(String fileName) {
-		try (FileReader fs = new FileReader(new File(fileName), StandardCharsets.UTF_8);
+		try (FileReader fs = new FileReader(new File(fileName));
 				Scanner scan = new Scanner(fs)) {
 			while (scan.hasNext()) {
 				String line = scan.nextLine();
