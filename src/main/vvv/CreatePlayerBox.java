@@ -108,4 +108,16 @@ public class CreatePlayerBox extends ModalBox {
 		}
 	}
 
+	public JButton getAddButton() {
+		return addButton;
+	}
+
+	public JTextField getPlayerNameBox() {
+		return playerNameBox;
+	}
+
+	public JButton getStartButton() {
+		return startButton;
+	}
+
 }

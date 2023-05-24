@@ -39,7 +39,9 @@ public class MainFrame extends JFrame implements ActionListener, ModelObserver {
 	 */
 	private final transient Controller controller;
 
-	private JFrame createPlayerBox;
+	private JFrame createPlayerBoxFrame;
+
+	private CreatePlayerBox createPlayerBox;
 
 	/**
 	 * Létrehozza a főablakot, elmenti a callback függvényeket, továbbá létrehozza a
@@ -85,9 +87,9 @@ public class MainFrame extends JFrame implements ActionListener, ModelObserver {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		JFrame newGame = new CreatePlayerBox(this, createFunc, startFunc);
-		newGame.setVisible(true);
-		createPlayerBox = newGame;
+		createPlayerBox = new CreatePlayerBox(this, createFunc, startFunc);
+		createPlayerBox.setVisible(true);
+		createPlayerBoxFrame = createPlayerBox;
 	}
 
 	/**
@@ -131,7 +133,15 @@ public class MainFrame extends JFrame implements ActionListener, ModelObserver {
 		controller.setWaitingForSkip(true);
 	}
 
-	public JFrame  getCreatePlayerBox() {
+	public JFrame getCreatePlayerBoxFrame() {
+		return createPlayerBoxFrame;
+	}
+
+	public CreatePlayerBox getCreatePlayerBox() {
 		return createPlayerBox;
+	}
+
+	public DrawPanel getDrawPanel() {
+		return drawPanel;
 	}
 }

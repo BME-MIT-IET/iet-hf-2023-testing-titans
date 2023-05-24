@@ -7,14 +7,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class MapLoader {
-	/**
-	 * Logger
-	 */
-	private static final Logger logger = LoggerFactory.getLogger(MapLoader.class);
 
 	/**
 	 * Egy adott játékmenethez tartozó konfigurációban megjelenő mező objektumok és
@@ -192,7 +186,6 @@ public class MapLoader {
 				interpretCommand(line);
 			}
 		} catch (Exception e) {
-			logger.error("Nem tudja megnyitni a fájlt.");
 		}
 	}
 
