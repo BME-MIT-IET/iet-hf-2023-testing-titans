@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+
 import java.util.logging.*;
 /**
  * Kirajzolja az aktuálisan lépő játékoshoz tartozó információkat.

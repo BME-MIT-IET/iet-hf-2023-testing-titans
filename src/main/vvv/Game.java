@@ -37,6 +37,8 @@ public class Game implements Subject<GameObserver> {
 	/** Tárolja, hogy a játék meg volt-e állítva. Alapból false. */
 	private boolean stopped = false;
 
+	private boolean isStarted = false;
+
 	public Game() {
 		init();
 	}
@@ -84,6 +86,7 @@ public class Game implements Subject<GameObserver> {
 	}
 
 	public void start() {
+		isStarted = true;
 		currentIterator = players.listIterator();
 		player = currentIterator.next();
 		ModelPublisher.getModelPublisher().publishNextPlayer();
@@ -150,6 +153,10 @@ public class Game implements Subject<GameObserver> {
 		}
 
 		ModelPublisher.getModelPublisher().publishTakeAction();
+	}
+
+	public boolean isStarted() {
+		return isStarted;
 	}
 
 }
