@@ -1,6 +1,6 @@
 Feature: Add player
 
-  @AddPlayser
+  @AddPlayer
   Scenario: Successfully add player
     Given the add player screen is displayed
     When the user adds a player
