@@ -1,7 +1,5 @@
 # Manual code review + Static analysis
 
----
-
 ## Feladat:
 
 Statikus analízis végzése SpotBug és SonarLint/SonarCloud alapján, és manuális kód átvizsgálása.
