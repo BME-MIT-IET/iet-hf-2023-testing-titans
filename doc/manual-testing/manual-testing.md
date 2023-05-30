@@ -289,12 +289,12 @@ elkészítésének sikertelenségét.
 1. A *"Válassz az alábbi cselekvések közül"* ablakon a lombik, ágens készítése ikonra kattintás.
 [img.png](test10_1.png)
 2. A *"Választott genetikai kód"* legördülő menüjében a *Védelmező* kiválasztása.
-![img.png](teszt10_2.png)
+![img.png](test10_2.png)
 3. A *Kiválaszt* gombra kattintás.
 
 **Elvárt kimenet**: *Bob* körének végeztével *Alice* *Ágensei* között nem jelenik meg az elkészített
 *Védelmező* ágens, *Aminosav* értéke nem csökken.
-![img.png](teszt10_outcome.png)
+![img.png](test10_outcome.png)
 
 **Kimenet**: Sikeres.
 
@@ -315,9 +315,9 @@ egy másik virológuson.
 
 **Lépések**: 
 1.A *"Válassz az alábbi cselekvések közül"* az injekciós tű, ágens használata gombra kattintás. 
-![img.png](teszt11_1.png)
+![img.png](test11_1.png)
 2. A *"Választott ágens"* legördülő menüjéből a *Bénító* kiválasztása. 
-![img.png](teszt11_2.png)
+![img.png](test11_2.png)
 3. A *"Választott virológus"* legördülő menüjéből *Alice* virológus kiválasztása.
 4. A *Kiválaszt* gombra kattintás.
 
@@ -343,9 +343,9 @@ egy másik virológuson.
 
 **Lépések**:
 1. A *"Válassz az alábbi cselekvések közül"* ablakban a zsák, lopás ikonra való kattintás. 
-![img.png](teszt12_1.png)
+![img.png](test12_1.png)
 2. A *"Választott opció"*-nál anyag kiválasztása. 
-![img.png](teszt12_2.png)
+![img.png](test12_2.png)
 3. A *"Választott virológus"* legördülő menüből *Bob* kiválasztása.
 4. A *Kiválaszt* gombra való kattintás.
 
@@ -353,7 +353,7 @@ egy másik virológuson.
 hogy *Alice* anyagmennyisége nőtt 1-1 mennyiséggel.
 
 **Kimenet**: Sikeres.
-![img.png](teszt12_outcome.png)
+![img.png](test12_outcome.png)
 **Megjegyzés**: -
 
 ---
@@ -373,7 +373,7 @@ típusú mezőre lépve már nem növekedik az anyagmennyiség.
 2. *Bob* körének befejeztével *Alice* virológus visszanavigál a *Raktár4* mezőre.
 
 **Elvárt kimenet**: *Alice* virológus anyagmennyisége a maximumot elérve, valamint újra *Raktár* típusú mezőre érkezve már nem növekszik.
-![img.png](teszt13.png)
+![img.png](test13.png)
 
 **Kimenet**: Sikeres.
 
@@ -394,7 +394,7 @@ típusú mezőre lépve már nem növekedik az anyagmennyiség.
 
 **Lépések**:
 1. *Bob* virológus felhasználja saját magán a *Védelmező* ágenst a 9. teszteset lépéseit követve. ![img.png](test14_1.png)
-2. *Alice* virológus *Bob* virológusra keni az elkészített *Bénító* ágenst a 11. teszteset lépéseit követve. ![img.png](teszt14_2.png)
+2. *Alice* virológus *Bob* virológusra keni az elkészített *Bénító* ágenst a 11. teszteset lépéseit követve. ![img.png](test14_2.png)
 
 **Elvárt kimenet**: A két virológus képes a mozgásra és cselekvésre is, a két ágens semlegesíti egymást, újra *Bob* következik. 
 
@@ -412,20 +412,29 @@ típusú mezőre lépve már nem növekedik az anyagmennyiség.
 
 **Előfeltételek**:
 - *Alice* és *Bob* egy mezőn helyezkednek el.
-- *Bob* rendelkezik legalább egy eszközzel.
-- *Alice* következik.
+- *Alice* rendelkezik legalább egy eszközzel.
+- *Bob* következik.
+- *Bob* rendelkezik *Bénító* ágenssel.
 
 **Lépések**:
-1. A *"Válassz az alábbi cselekvések közül"* a zsák, lopás ikonra való kattintás.
-![img.png](teszt15_1.png)
-2. A *"Választott opció"*-nál a felszerelés kiválasztása, a *"Választott virológus"* legördülő menüjéből *Bob*
+1. A *"Válassz az alábbi cselekvések közül" az *injekciós tű* kiválasztása.
+2. A *Választott ágens* legördülő menüjéből a *Bénító* kiválasztása, a *Választott virológus*
+legördülő menüjéből *Alice* virológus kiválasztása.
+![img.png](test15_3.png)
+3. *Alice* virológus körében az *Ok* gombra kattintás.
+![img.png](test15_4.png)
+4. A *"Válassz az alábbi cselekvések közül"* a zsák, lopás ikonra való kattintás.
+![img.png](test15_1.png)
+5. A *"Választott opció"*-nál a *felszerelés* kiválasztása, a *"Választott virológus"* legördülő menüjéből *Alice*
 játékos kiválasztása.
 ![img.png](test15_2.png)
-3. A *Kiválaszt* gombra kattintás.
+6. A *Kiválaszt* gombra kattintás.
 
-**Elvárt kimenet**: 
+**Elvárt kimenet**: *Bob* virológus effektjei közé felkerül a Balta (+) effekt.
 
-**Kimenet**:
+
+**Kimenet**:Sikeres.
+![img.png](test15_outcome.png)
 
 **Megjegyzés**: -
 
@@ -435,7 +444,7 @@ játékos kiválasztása.
 
 **ID**: 16
 
-**Teszteset leírása**: A teszteset ellnőrzi, hogy *Vitustánc* használata után a játékos mozgása véletlenszerű.
+**Teszteset leírása**: A teszteset ellenőrzi, hogy *Vitustánc* használata után a játékos mozgása véletlenszerű.
 
 **Előfeltételek**:
 - *Alice* és *Bob* egy mezőn tartózkodnak.
@@ -458,20 +467,115 @@ játékos kiválasztása.
 
 ---
 
-##**Teszteset neve**: **
+##**Teszteset neve**: *Balta használata másik játékoson*
 
-**ID**:
+**ID**: 17
 
-**Teszteset leírása**:
+**Teszteset leírása**: A teszteset ellenőrzi a *Balta* használatát egy másik játékoson.
 
 **Előfeltételek**:
+- *Bob* játékos rendelkezik *Baltával*.
+- *Bob* és *Alice* egy mezőn tartózkodnak.
+- *Bob virológus következik.*
 
 **Lépések**:
+1. A *"Válassz az alábbi cselekvések közül"* a *Balta* ikonra való kattintás.
+![img.png](test17_1.png)
+2. A *Választott virológus* legördülő menüből *Alice* virológus kiválasztása.ű
+![img.png](test17_2.png)
+3. A *Kiválaszt* gombra kattinás.
 
-**Elvárt kimenet**:
+**Elvárt kimenet**: *Alice* virológus már nem tud a cselekvések közül választani, újra *Bob*
+virológus következik, valamint az *Élő virológusok* száma csökkent eggyel.
 
-**Kimenet**:
+**Kimenet**: Sikeres.
+![img.png](teszt17_outcome.png)
 
 **Megjegyzés**: -
 
 ---
+
+##**Teszteset neve**: *Kesztyű használata védekezéshez*
+
+**ID**: 18 
+
+**Teszteset leírása**: A teszteset ellenőrzi a kesztyű működését támadás esetén.
+
+**Előfeltételek**:
+- *Bob* és *Alice* egy mezőn tartózkodnak.
+- *Bob* virológus rendelkezik egy kesztyűvel.
+- *Alice* virológus rendelkezik egy *Vitustánc* ágenssel.
+- *Alice* virológus következik.
+
+**Lépések**:
+1. A *"Válassz az alábbi cselekvések közül"* az injekciós tű kiválasztása.
+![img.png](test18_1.png)
+2. A *Választott ágens* legördülő menüjéből a *Vitustánc*, a *Választott játékos*
+legördülő menüjéből *Bob* virológus kiválasztása.
+![img.png](test18_2.png)
+3. A *Kiválaszt* gombra kattintás.
+
+**Elvárt kimenet**: Bob játékos következik, a *Kesztyű* számlálója csökkent eggyel, majd a körének befejeztével
+*Alice* következik, akinek effektjei közé felkerült a *Vitustánc*.
+
+**Kimenet**: Sikeres.
+![img.png](test18_outcome1.png)
+![img.png](test18_outcome2.png)
+**Megjegyzés**: -
+
+---
+
+##**Teszteset neve**: *Zsák működésének ellenőrzése*
+
+**ID**: 19
+
+**Teszteset leírása**: A teszteset ellenőrzi a *zsák* működését.
+
+**Előfeltételek**:
+- *Bob* a *Szabad19* mezőn áll.
+- *Bob* következik.
+ 
+**Lépések**:
+1. A *"Válassz az alábbi lehetőségek közül"* a *csizma*, mozgás ikonra való kattintás.
+![img.png](test19_1.png)
+2. A *"Választott mező"* legördülő menüből az *Óvóhely7* kiválasztása.
+![img.png](test19_2.png)
+3. A *Kiválaszt* gombra kattintás.
+
+
+**Elvárt kimenet**: *Alice* körének befejeztével ellenőrizhető, hogy az alap enyagmennyiség 
+5-ről 7-re emelkedett, valamint az effektek közé felkerült a *Zsák*.
+
+**Kimenet**: Sikeres.
+![img.png](test19_outcome.png)
+
+**Megjegyzés**: -
+
+---
+
+##**Teszteset neve**: *A Bénító ágens megtanulása*
+
+**ID**: 20
+
+**Teszteset leírása**: A teszteset ellenőrzi a *bénító* ágens megtanulását.
+
+**Előfeltételek**:
+- *Bob* az *Raktár6* mezőn áll.
+- *Bob* következik.
+
+**Lépések**:
+1. A *"Válassz az alábbi lehetőségek közül"* a *csizma*, mozgás ikonra való kattintás.
+![img.png](test20_1.png)
+2. A *"Választott mező"* legördülő menüből az *Labor5* kiválasztása.
+![img.png](test20_2.png)
+3. A *Kiválaszt* gombra kattintás.
+
+
+**Elvárt kimenet**: *Alice* körének befejeztével ellenőrizhető, hogy *Bob* genetikai kódjai közé
+felkerült a *Bénító ágens*.
+
+**Kimenet**: Sikeres.
+![img_1.png](test20_outcome.png)
+
+**Megjegyzés**: -
+
