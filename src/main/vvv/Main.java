@@ -1,7 +1,5 @@
 package vvv;
 
-import java.util.logging.*;
-
 /** A program indításáért felelős osztály. */
 public class Main {
 
