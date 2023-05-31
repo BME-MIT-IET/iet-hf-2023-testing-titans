@@ -13,7 +13,6 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-
 import java.util.logging.*;
 /**
  * Kirajzolja az aktuálisan lépő játékoshoz tartozó információkat.
@@ -223,6 +222,10 @@ public class DrawPanel extends Canvas {
 			g.drawString(a, 390, 390 + n * 20);
 			n++;
 		}
+	}
+
+	public String getPlayerName() {
+		return playerName;
 	}
 
 }
