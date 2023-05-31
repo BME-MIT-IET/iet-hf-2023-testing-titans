@@ -579,3 +579,147 @@ felkerült a *Bénító ágens*.
 
 **Megjegyzés**: -
 
+78%-a foglalt a tárhelyednek … Amikor mented fájljaidat a Drive-ra, biztonsági mentés készítesz a Google Fotókba, illetve e-mailt küldesz és fogadsz a Gmailben, tárhelyet használsz fel
+tesztek.txt
+---
+
+
+##**Teszteset neve**: *Köpeny felvétele*
+
+**ID**: 21
+
+**Teszteset leírása**: A teszteset ellenőrzi a *köpeny* felvételét.
+
+**Előfeltételek**:
+- *Alice* a *Szabad1* mezőn áll.
+- *Alice* következik.
+
+**Lépések**:
+1. A *"Válassz az alábbi lehetőségek közül"* a *csizma*, mozgás ikonra való kattintás.
+   ![img.png](test21_1.png)
+2. A *"Választott mező"* legördülő menüből az *Óvóhely2* kiválasztása.
+   ![img.png](test21_2.png)
+3. A *Kiválaszt* gombra kattintás.
+
+
+**Elvárt kimenet**: *Bob* körének befejeztével ellnőrizhető, hogy *Alice* effektjei közé felkerült a *Köpeny*.
+
+**Kimenet**: Sikeres.
+![img.png](test21_outcome.png)
+**Megjegyzés**: -
+
+---
+
+
+##**Teszteset neve**: *Köpeny működésének tesztelése*
+
+**ID**: 22
+
+**Teszteset leírása**: A teszteset ellenőrzi a *köpeny* működését.
+
+**Előfeltételek**:
+- *Alice* és *Bob* a ugyanazon a mezőn áll.
+- *Bob* rendelkezik elkészített *bénító* ágenssel.
+- *Alice* rendelkezik *köpennyel*.
+- *Bob* következik.
+
+**Lépések**:
+1. A *"Válassz az alábbi lehetőségek közül"* a *tű*, ágens használata ikonra való kattintás.
+   ![img.png](test22_1.png)
+2. A *"Választott ágens"* legördülő menüből a *Bénító*, a *"Választott virológus"* legördülő menüből *Alice* kiválasztása.
+   ![img.png](test21_2.png)
+3. A *Kiválaszt* gombra kattintás.
+
+
+**Elvárt kimenet**: *Alice* a körében ellnőrizhető, hogy a játékos képes minden interakcióra, amire eddig, tehát az ágens felkenése sikertelen volt.
+
+**Kimenet**: Sikeres.
+![img.png](test22_outcome.png)
+**Megjegyzés**: -
+
+---
+
+
+##**Teszteset neve**: *Köpeny működésének tesztelése, ha a támadó ágens medvevírus*
+
+**ID**: 23
+
+**Teszteset leírása**: A teszteset ellenőrzi a *köpeny* működését, abban az esetben, ha a játékos olyan mezőre lép, ahol megfertőződik medvevírussal, vagy találkozik olyan játékossal, aki megfertőződött.
+
+**Előfeltételek**:
+- *Alice* rendelkezik *köpennyel*.
+- *Alice* a *Szabad3* mezőn áll.
+
+**Lépések**:
+1. A *"Válassz az alábbi lehetőségek közül"* a *csizma*, mozgás ikonra való kattintás.
+   ![img.png](test23_1.png)
+2. A *"Választott mező"* legördülő menüből a *Labor3* kiválasztása.
+   ![img.png](test23_2.png)
+3. A *Kiválaszt* gombra kattintás.
+
+
+**Elvárt kimenet**: *Alice* a körében ellnőrizhető, hogy a játékos képes minden interakcióra, amire eddig, tehát az medveágenssel való megfetőződés sikertelen volt.
+
+**Kimenet**: Sikeres.
+![img.png](test23_outcome.png)
+**Megjegyzés**: -
+
+---
+
+
+##**Teszteset neve**: *Bénító ágens készítése sikeres*
+
+**ID**: 24
+
+**Teszteset leírása**: A teszteset ellenőrzi a *Bénító* ágens készítését.
+
+**Előfeltételek**:
+- *Bob* ismeri *Bénító* genetikai kódot.
+- *Bob* rendelkezik elegendő anyagmennyiséggel.
+
+**Lépések**:
+1. A *"Válassz az alábbi lehetőségek közül"* a *lombik*, ágens készítése ikonra való kattintás.
+   ![img.png](test24_1.png)
+2. A *"Választott genetikai kód"* legördülő menüből a *Bénító* kiválasztása.
+   ![img.png](test24_2.png)
+3. A *Kiválaszt* gombra kattintás.
+
+
+
+**Elvárt kimenet**: *Alice* körének befejeztével ellenőrizhteő, hogy az ágens készítés sikeres volt, *Bob* virológus ágensei közé felkerült a *Bénító*. 
+
+**Kimenet**: Sikeres.
+   ![img.png](test24_outcome.png)
+**Megjegyzés**: -
+
+---
+
+
+##**Teszteset neve**: *Vitustánc ágens ágens készítése sikeres*
+
+**ID**: 25
+
+**Teszteset leírása**: A teszteset ellenőrzi a *Vitustánc* ágens készítését.
+
+**Előfeltételek**:
+- *Alice* ismeri *Vitustánc* genetikai kódot.
+- *Alice* rendelkezik elegendő anyagmennyiséggel.
+
+**Lépések**:
+1. A *"Válassz az alábbi lehetőségek közül"* a *lombik*, ágens készítése ikonra való kattintás.
+   ![img.png](test25_1.png)
+2. A *"Választott genetikai kód"* legördülő menüből a *Vitustánc* kiválasztása.
+   ![img.png](test23_2.png)
+3. A *Kiválaszt* gombra kattintás.
+
+
+**Elvárt kimenet**: *Bob* körének befejeztével ellenőrizhető, hogy az ágens készítés sikeres volt, *Alice* virológus ágensei közé felkerült a *Vitustánc*.
+
+**Kimenet**: Sikeres.
+   ![img.png](test25_outcome.png)
+
+**Megjegyzés**: -
+
+---
+
+
