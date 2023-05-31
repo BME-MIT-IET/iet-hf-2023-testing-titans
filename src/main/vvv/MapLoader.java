@@ -41,7 +41,6 @@ public class MapLoader {
 		geneticCodes.put("chor", ChoreaGeneticCode.getInstance());
 	}
 
-
 	/**
 	 * Az adott azonosítóhoz megkeresi a megfelelő mezőt.
 	 * 
