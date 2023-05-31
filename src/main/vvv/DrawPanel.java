@@ -13,17 +13,11 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Kirajzolja az aktuálisan lépő játékoshoz tartozó információkat.
  */
 public class DrawPanel extends Canvas {
-	/**
-	 * Logger
-	 */
-	private static final Logger logger = LoggerFactory.getLogger(DrawPanel.class);
 
 	/**
 	 * A virológushoz tartozó karakter képét tárolja.
@@ -89,8 +83,6 @@ public class DrawPanel extends Canvas {
 			doctorsImg = ImageIO.read(new File("./res/pics/doctors_75.png"));
 
 		} catch (IOException e) {
-			logger.error(System.getProperty("user.dir"));
-			logger.error("Sikertelen volt a képek betöltése.");
 		}
 	}
 
@@ -224,6 +216,10 @@ public class DrawPanel extends Canvas {
 			g.drawString(a, 390, 390 + n * 20);
 			n++;
 		}
+	}
+
+	public String getPlayerName() {
+		return playerName;
 	}
 
 }

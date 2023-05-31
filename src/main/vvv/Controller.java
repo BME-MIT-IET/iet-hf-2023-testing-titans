@@ -11,13 +11,21 @@ public class Controller {
 	/** A várakozás megvalósításához szükséges igaz-hamis érték. */
 	private boolean waitingForSkip;
 
+	private TakeActionBox takeActionBox;
+
+	private MoveBox moveBox;
+
+	private CraftBox craftBox;
+
+	private ApplyBox applyBox;
+
 	/** Kontroller, ami létrehozza a vezérlő ablakokat. */
 	public Controller(Game game) {
 		mainFrame = new MainFrame(game, this, this::createPlayer, this::startGame);
 		this.game = game;
 		mainFrame.setVisible(true);
 
-		new TakeActionBox(mainFrame, this::moveEvent, this::craftEvent, this::applyEvent, this::hitEvent,
+		takeActionBox = new TakeActionBox(mainFrame, this::moveEvent, this::craftEvent, this::applyEvent, this::hitEvent,
 				this::stealEvent);
 
 		new SkipBox(mainFrame, this::skipCallback);
@@ -56,7 +64,7 @@ public class Controller {
 
 	/** MoveBox-ot hoz létre, ami a lépés kiválasztásához kell. */
 	public void moveEvent() {
-		MoveBox moveBox = new MoveBox(mainFrame, this::moveCallback, game);
+		moveBox = new MoveBox(mainFrame, this::moveCallback, game);
 		moveBox.setVisible(true);
 	}
 
@@ -68,7 +76,7 @@ public class Controller {
 
 	/** CraftBox-ot hoz létre, ami az ágens készítéshez kell. */
 	public void craftEvent() {
-		CraftBox craftBox = new CraftBox(mainFrame, this::craftCallback, game);
+		craftBox = new CraftBox(mainFrame, this::craftCallback, game);
 		craftBox.setVisible(true);
 	}
 
@@ -80,7 +88,7 @@ public class Controller {
 
 	/** ApplyBox-ot hoz lére, ami a felkenéshez kell. */
 	public void applyEvent() {
-		ApplyBox applyBox = new ApplyBox(mainFrame, this::applyCallback, game);
+		applyBox = new ApplyBox(mainFrame, this::applyCallback, game);
 		applyBox.setVisible(true);
 	}
 
@@ -119,5 +127,21 @@ public class Controller {
 	/** Körből való kimaradáshoz Callback, a view hívja. */
 	public void skipCallback() {
 		game.nextPlayer();
+	}
+
+	public TakeActionBox getTakeActionBox() {
+		return takeActionBox;
+	}
+
+	public MoveBox getMoveBox() {
+		return moveBox;
+	}
+
+	public CraftBox getCraftBox() {
+		return craftBox;
+	}
+
+	public ApplyBox getApplyBox() {
+		return applyBox;
 	}
 }

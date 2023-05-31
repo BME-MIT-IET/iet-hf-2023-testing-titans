@@ -1,0 +1,11 @@
+call mvn test -Dtest=RunCucumberTest "-Dcucumber.filter.tags=@NewGame"
+call mvn test -Dtest=RunCucumberTest "-Dcucumber.filter.tags=@AddPlayer"
+call mvn test -Dtest=RunCucumberTest "-Dcucumber.filter.tags=@StartGame"
+call mvn test -Dtest=RunCucumberTest "-Dcucumber.filter.tags=@CanStep"
+call mvn test -Dtest=RunCucumberTest "-Dcucumber.filter.tags=@GetAmino"
+call mvn test -Dtest=RunCucumberTest "-Dcucumber.filter.tags=@GetEquipment"
+call mvn test -Dtest=RunCucumberTest "-Dcucumber.filter.tags=@GetCode"
+call mvn test -Dtest=RunCucumberTest "-Dcucumber.filter.tags=@CreateAgent"
+call mvn test -Dtest=RunCucumberTest "-Dcucumber.filter.tags=@CannotCreateAgent"
+call mvn test -Dtest=RunCucumberTest "-Dcucumber.filter.tags=@ApplyAgent"
+

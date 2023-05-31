@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.NoSuchElementException;
 import java.util.Random;
 
 /**
@@ -16,6 +17,12 @@ import java.util.Random;
  * (például új kör kezdete).
  */
 public class Game implements Subject<GameObserver> {
+	private static boolean deterministicPlayerPlacement = false;
+	private static final String[] startingFields = { "Szabad1", "Szabad2", "Szabad3" };
+
+	public static void makePlayerPlacementDeterministic() {
+		deterministicPlayerPlacement = true;
+	}
 
 	/**
 	 * A játék eseményekre feliratkozókat tárolja. Az eseményeket a GameObserver
@@ -37,6 +44,8 @@ public class Game implements Subject<GameObserver> {
 	/** Tárolja, hogy a játék meg volt-e állítva. Alapból false. */
 	private boolean stopped = false;
 
+	private boolean isStarted = false;
+
 	public Game() {
 		init();
 	}
@@ -56,8 +65,23 @@ public class Game implements Subject<GameObserver> {
 	public void addPlayer(Player player) {
 		players.add(player);
 		this.player = players.get(0);
-		int index = random.nextInt(fields.size());
+		int index = getNextFieldToPlacePlayerOn();
 		player.move(fields.get(index));
+	}
+
+	private int getNextFieldToPlacePlayerOn() {
+		if (!deterministicPlayerPlacement) {
+			return random.nextInt(fields.size());
+		}
+
+		String id = startingFields[(players.size() - 1) % startingFields.length];
+		for (Field field : fields) {
+			if (field.toString().equals(id)) {
+				return fields.indexOf(field);
+			}
+		}
+
+		throw new NoSuchElementException("No field with id \"" + id + "\" exists!");
 	}
 
 	/** Leállítja a játékciklust. */
@@ -84,6 +108,7 @@ public class Game implements Subject<GameObserver> {
 	}
 
 	public void start() {
+		isStarted = true;
 		currentIterator = players.listIterator();
 		player = currentIterator.next();
 		ModelPublisher.getModelPublisher().publishNextPlayer();
@@ -150,6 +175,10 @@ public class Game implements Subject<GameObserver> {
 		}
 
 		ModelPublisher.getModelPublisher().publishTakeAction();
+	}
+
+	public boolean isStarted() {
+		return isStarted;
 	}
 
 }
