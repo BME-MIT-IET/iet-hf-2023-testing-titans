@@ -1,0 +1,45 @@
+package vvv.cucumber;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import vvv.Controller;
+import vvv.Game;
+import vvv.MainFrame;
+
+public class CannotCreateAgent {
+    private Game game;
+    private Controller controller;
+    private MainFrame mainFrame;
+
+    @Given("the user knows a genetic code but does not have enough amino and nucleotid")
+    public void gameInit() {
+        game = new Game();
+        Game.makePlayerPlacementDeterministic();
+        controller = new Controller(game);
+        mainFrame = new MainFrame(game, controller, controller::createPlayer,
+                controller::startGame);
+        mainFrame.getJMenuBar().getMenu(0).getItem(0).doClick();
+        mainFrame.getCreatePlayerBox().getPlayerNameBox().setText("Player1");
+        mainFrame.getCreatePlayerBox().getAddButton().doClick();
+        mainFrame.getCreatePlayerBox().getStartButton().doClick();
+        controller.moveEvent();
+        controller.getMoveBox().getChooseButton().doClick();
+        controller.moveEvent();
+        controller.getMoveBox().getFields().setSelectedIndex(1);
+        controller.getMoveBox().getChooseButton().doClick();
+    }
+
+    @When("the user tries to create an agent")
+    public void pressesStartButton() {
+        controller.craftEvent();
+        controller.getCraftBox().getChooseButton().doClick();
+    }
+
+    @Then("the user does not get an agent")
+    public void gameStarted() {
+        assertEquals(0, game.getPlayers().get(0).getAgents().size());
+    }
+}
