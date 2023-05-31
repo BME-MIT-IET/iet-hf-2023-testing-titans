@@ -8,8 +8,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.logging.*;
 
 public class MapLoader {
+	/**
+	 * Logger
+	 */
+	private static final Logger logger = LoggerUtil.getLogger();
 
 	/**
 	 * Egy adott játékmenethez tartozó konfigurációban megjelenő mező objektumok és
@@ -186,6 +191,7 @@ public class MapLoader {
 				interpretCommand(line);
 			}
 		} catch (Exception e) {
+			logger.log(Level.SEVERE, "Nem tudja megnyitni a fájlt.");
 		}
 	}
 
