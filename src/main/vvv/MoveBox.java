@@ -54,4 +54,8 @@ public class MoveBox extends ActionBox {
 		}
 
 	}
+
+	public JComboBox<Field> getFields() {
+		return fields;
+	}
 }
