@@ -53,13 +53,14 @@ class PlayerTest {
         // Assert
         assertEquals(
                 1,
-                player2anoint.getEffects().stream().filter(effect -> effect.getClass() == NumbingAgentEffect.class)
-                        .count(),
-                "The anointed player was anointed.");
+                player2anoint.getEffects().stream().filter(effect -> effect.getClass() == NumbingAgentEffect.class).count(),
+                "The anointed player was anointed."
+        );
         assertEquals(
                 0,
                 player.getEffects().stream().filter(effect -> effect.getClass() == NumbingAgentEffect.class).count(),
-                "The player was not anointed.");
+                "The player was not anointed."
+        );
     }
 
     @Test
@@ -79,13 +80,14 @@ class PlayerTest {
         // Assert
         assertEquals(
                 0,
-                player2anoint.getEffects().stream().filter(effect -> effect.getClass() == NumbingAgentEffect.class)
-                        .count(),
-                "The anointed player was not anointed.");
+                player2anoint.getEffects().stream().filter(effect -> effect.getClass() == NumbingAgentEffect.class).count(),
+                "The anointed player was not anointed."
+        );
         assertEquals(
                 0,
                 player.getEffects().stream().filter(effect -> effect.getClass() == NumbingAgentEffect.class).count(),
-                "The player was not anointed.");
+                "The player was not anointed."
+        );
     }
 
     @Test
@@ -104,13 +106,14 @@ class PlayerTest {
         // Assert
         assertEquals(
                 0,
-                player2anoint.getEffects().stream().filter(effect -> effect.getClass() == NumbingAgentEffect.class)
-                        .count(),
-                "The anointed player was not anointed.");
+                player2anoint.getEffects().stream().filter(effect -> effect.getClass() == NumbingAgentEffect.class).count(),
+                "The anointed player was not anointed."
+        );
         assertEquals(
                 1,
                 player.getEffects().stream().filter(effect -> effect.getClass() == NumbingAgentEffect.class).count(),
-                "The player was anointed back.");
+                "The player was anointed back."
+        );
     }
 
     @Test
@@ -125,7 +128,8 @@ class PlayerTest {
         assertEquals(
                 1,
                 player.getEffects().stream().filter(effect -> effect.getClass() == NumbingAgentEffect.class).count(),
-                "The player was anointed.");
+                "The player was anointed."
+        );
     }
 
     @Test
