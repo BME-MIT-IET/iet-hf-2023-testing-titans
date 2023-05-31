@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.NoSuchElementException;
 import java.util.Random;
 
 /**
@@ -17,7 +18,7 @@ import java.util.Random;
  */
 public class Game implements Subject<GameObserver> {
 	private static boolean deterministicPlayerPlacement = false;
-	private static final int[] startingFields = { 0, 1, 2, 3 };
+	private static final String[] startingFields = { "Szabad1", "Szabad2", "Szabad3" };
 
 	public static void makePlayerPlacementDeterministic() {
 		deterministicPlayerPlacement = true;
@@ -73,7 +74,14 @@ public class Game implements Subject<GameObserver> {
 			return random.nextInt(fields.size());
 		}
 
-		return startingFields[(players.size() - 1) % startingFields.length];
+		String id = startingFields[(players.size() - 1) % startingFields.length];
+		for (Field field : fields) {
+			if (field.toString().equals(id)) {
+				return fields.indexOf(field);
+			}
+		}
+
+		throw new NoSuchElementException("No field with id \"" + id + "\" exists!");
 	}
 
 	/** Leállítja a játékciklust. */
