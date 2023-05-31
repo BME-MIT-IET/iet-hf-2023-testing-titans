@@ -185,4 +185,8 @@ public class TakeActionBox extends ModalBox {
 		parentFrame.setEnabled(false);
 	}
 
+	public JButton getMoveButton() {
+		return moveButton;
+	}
+
 }
