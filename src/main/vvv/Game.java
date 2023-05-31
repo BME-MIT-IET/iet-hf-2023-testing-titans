@@ -16,6 +16,12 @@ import java.util.Random;
  * (például új kör kezdete).
  */
 public class Game implements Subject<GameObserver> {
+	private static boolean deterministicPlayerPlacement = false;
+	private static final int[] startingFields = { 0, 1, 2, 3 };
+
+	public static void makePlayerPlacementDeterministic() {
+		deterministicPlayerPlacement = true;
+	}
 
 	/**
 	 * A játék eseményekre feliratkozókat tárolja. Az eseményeket a GameObserver
@@ -58,8 +64,16 @@ public class Game implements Subject<GameObserver> {
 	public void addPlayer(Player player) {
 		players.add(player);
 		this.player = players.get(0);
-		int index = random.nextInt(fields.size());
+		int index = getNextFieldToPlacePlayerOn();
 		player.move(fields.get(index));
+	}
+
+	private int getNextFieldToPlacePlayerOn() {
+		if (!deterministicPlayerPlacement) {
+			return random.nextInt(fields.size());
+		}
+
+		return startingFields[(players.size() - 1) % startingFields.length];
 	}
 
 	/** Leállítja a játékciklust. */
