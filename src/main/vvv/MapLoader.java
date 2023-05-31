@@ -2,6 +2,7 @@ package vvv;
 
 import java.io.File;
 import java.io.FileReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -39,7 +40,6 @@ public class MapLoader {
 		geneticCodes.put("forg", ForgetGeneticCode.getInstance());
 		geneticCodes.put("chor", ChoreaGeneticCode.getInstance());
 	}
-
 
 	/**
 	 * Az adott azonosítóhoz megkeresi a megfelelő mezőt.
@@ -184,7 +184,7 @@ public class MapLoader {
 	 * @param fileName A konfigurációs fájl neve.
 	 */
 	public MapLoader(String fileName) {
-		try (FileReader fs = new FileReader(new File(fileName));
+		try (FileReader fs = new FileReader(new File(fileName), StandardCharsets.UTF_8);
 				Scanner scan = new Scanner(fs)) {
 			while (scan.hasNext()) {
 				String line = scan.nextLine();
