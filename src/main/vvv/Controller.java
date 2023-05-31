@@ -11,13 +11,17 @@ public class Controller {
 	/** A várakozás megvalósításához szükséges igaz-hamis érték. */
 	private boolean waitingForSkip;
 
+	private TakeActionBox takeActionBox;
+
+	private MoveBox moveBox;
+
 	/** Kontroller, ami létrehozza a vezérlő ablakokat. */
 	public Controller(Game game) {
 		mainFrame = new MainFrame(game, this, this::createPlayer, this::startGame);
 		this.game = game;
 		mainFrame.setVisible(true);
 
-		new TakeActionBox(mainFrame, this::moveEvent, this::craftEvent, this::applyEvent, this::hitEvent,
+		takeActionBox = new TakeActionBox(mainFrame, this::moveEvent, this::craftEvent, this::applyEvent, this::hitEvent,
 				this::stealEvent);
 
 		new SkipBox(mainFrame, this::skipCallback);
@@ -56,7 +60,7 @@ public class Controller {
 
 	/** MoveBox-ot hoz létre, ami a lépés kiválasztásához kell. */
 	public void moveEvent() {
-		MoveBox moveBox = new MoveBox(mainFrame, this::moveCallback, game);
+		moveBox = new MoveBox(mainFrame, this::moveCallback, game);
 		moveBox.setVisible(true);
 	}
 
@@ -119,5 +123,13 @@ public class Controller {
 	/** Körből való kimaradáshoz Callback, a view hívja. */
 	public void skipCallback() {
 		game.nextPlayer();
+	}
+
+	public TakeActionBox getTakeActionBox() {
+		return takeActionBox;
+	}
+
+	public MoveBox getMoveBox() {
+		return moveBox;
 	}
 }

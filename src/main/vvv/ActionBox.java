@@ -101,4 +101,8 @@ public abstract class ActionBox extends ModalBox {
 		this.dispose();
 	}
 
+	public JButton getChooseButton() {
+		return chooseButton;
+	}
+
 }
